@@ -1,3 +1,3 @@
-# Readme
+# pyt
 
-WIP
+A simple interface to manage business data.
