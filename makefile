@@ -1,6 +1,11 @@
 all:
 	python hot_reload.py
 
+fresh:
+	rm -f *.db
+	rm -rf __pycache__
+	python hot_reload.py
+
 main:
 	python main.py
 
