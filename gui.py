@@ -94,7 +94,7 @@ def create_gui():
 
         
         add_window = tk.Toplevel(root)
-        add_window.title("Add New Contact")
+        add_window.title("Add New Lead")
         add_window.configure()
 
         
@@ -259,6 +259,7 @@ def create_gui():
     sv_ttk.use_dark_theme()
     populate_table()
     populate_project_table()
+    populate_lead_table()
 
     switch_tab("Contacts")
     root.resizable(True, True)
