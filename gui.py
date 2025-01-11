@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, Menu
 from database import fetch_contacts, add_contact, delete_contact, add_project, fetch_projects, delete_project
 import sv_ttk
 
@@ -12,7 +12,7 @@ def create_gui():
         # Fetch contacts from the database and populate the table
         for contact in fetch_contacts():
             table.insert("", "end", values=contact)
-
+            
     def populate_project_table():
         for row in table.get_children():
             table.delete(row)
@@ -114,7 +114,26 @@ def create_gui():
     root = tk.Tk()
     root.title("pyt")
     root.attributes('-fullscreen', False)
-    root.configure(borderwidth=10, cursor="plus")
+    
+    menubar = Menu(root, background='blue', fg='white') 
+  
+    # Declare file and edit for showing in menubar 
+    file = Menu(menubar, tearoff=False) 
+    edit = Menu(menubar, tearoff=False) 
+    
+    # Add commands in in file menu 
+    file.add_command(label="New") 
+    file.add_command(label="Exit", command=root.quit) 
+    
+    # Add commands in edit menu 
+    edit.add_command(label="Cut") 
+    edit.add_command(label="Copy") 
+    edit.add_command(label="Paste") 
+    
+    # Display the file and edit declared in previous step 
+    menubar.add_cascade(label="File", menu=file) 
+    menubar.add_cascade(label="Edit", menu=edit) 
+    root.configure(borderwidth=10, cursor="plus", menu=menubar)
 
     # Modern Tabline
     tabline = tk.Frame(root)
