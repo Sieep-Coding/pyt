@@ -18,7 +18,7 @@ I want this to run as fast as possible, with the goal of keeping the executable 
 
 Some other features include:
 - Adding, managing, removing data through forms
-- No Server! Uses a single `.db` file locally. 
+- No server! Uses a single `.db` file locally. 
 - Exporting to common filetypes
 - Viewing data and reports easily
 - *Fast AF* `SQLite` backend
