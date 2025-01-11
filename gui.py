@@ -5,20 +5,14 @@ import sv_ttk
 
 def create_gui():
     def populate_table():
-        # Clear the current table entries
-        for row in table.get_children():
-            table.delete(row)
-        
-        # Fetch contacts from the database and populate the table
+        """Populate the contacts table."""
         for contact in fetch_contacts():
             table.insert("", "end", values=contact)
 
     def populate_project_table():
-        for row in table.get_children():
-            table.delete(row)
-
+        """Populate the projects table."""
         for project in fetch_projects():
-            table.insert("", "end", values=project)
+            proj_table.insert("", "end", values=project)
 
     def switch_tab(tab_name):
         for frame in frames.values():
