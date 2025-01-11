@@ -108,6 +108,13 @@ def update_lead(business_name, contact_name, title, email, phone, status):
     conn.commit()
     conn.close()
 
+def delete_lead(lead_id):
+    conn = sqlite3.connect("business_contacts.db")
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM leads WHERE id = ?", (lead_id,))
+    conn.commit()
+    conn.close()
+
 def fetch_projects():
     conn = sqlite3.connect("business_contacts.db")
     cursor = conn.cursor()

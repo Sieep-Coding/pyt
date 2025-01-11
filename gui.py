@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, Menu
-from database import fetch_contacts, add_contact, delete_contact, add_project, fetch_projects, delete_project, fetch_leads, add_lead, update_lead
+from database import fetch_contacts, add_contact, delete_contact, add_project, fetch_projects, delete_project, fetch_leads, add_lead, update_lead, delete_lead
 import sv_ttk
 
 def create_gui():
@@ -18,7 +18,7 @@ def create_gui():
 
     def populate_lead_table():
         """Populate the leads table."""
-        lead_table.delete(*proj_table.get_children())
+        lead_table.delete(*lead_table.get_children())
         for lead in fetch_leads():
             lead_table.insert("", "end", values=lead)
 
@@ -139,18 +139,33 @@ def create_gui():
             elif response is None or False:
                 return
             
+    def delete_selected_lead():
+        selected_lead = lead_table.selection()
+        if not selected_lead:
+            messagebox.showerror("Error", "No Lead selected.")
+            return
+        else:
+            response = messagebox.askyesnocancel("Confirm Delete", "Are you sure you want to delete this lead?")
+            if response:
+                lead_id = lead_table.item(selected_lead, "values")[0]
+                # Call delete_contact function from the database module
+                delete_lead(lead_id)
+                populate_lead_table()
+            elif response is None or False:
+                return
+            
     def delete_selected_project():
-        selected_item = table.selection()
+        selected_item = proj_table.selection()
         if not selected_item:
             messagebox.showerror("Error", "No contact selected.")
             return
         else:
-            response = messagebox.askyesnocancel("Confirm Delete", "Are you sure you want to delete this contact?")
+            response = messagebox.askyesnocancel("Confirm Delete", "Are you sure you want to delete this project?")
             if response:
-                contact_id = table.item(selected_item, "values")[0]
+                contact_id = proj_table.item(selected_item, "values")[0]
                 # Call delete_contact function from the database module
                 delete_project(contact_id)
-                populate_table()
+                populate_project_table()
             elif response is None or False:
                 return
             
@@ -187,7 +202,7 @@ def create_gui():
     view = Menu(menubar, tearoff=False)
     menubar.add_cascade(label="View", menu=view) 
     view.add_command(label="Reports")
-    
+
     root.configure(borderwidth=5, menu=menubar)
 
     
@@ -241,9 +256,11 @@ def create_gui():
     # Leads
     leads = frames["Leads"]
 
-    lead_table = ttk.Treeview(leads, columns=("ID", "Business Name", "Contact Name", "Title", "Email", "Phone", "Status"))
+    lead_table = ttk.Treeview(leads, columns=("ID", "Business Name", "Contact Name", "Title", "Email", "Phone", "Status"), show="headings")
     lead_table.heading("ID", text="ID")
-    lead_table.heading("Contact Name", text="Project Name")
+    lead_table.heading("Business Name", text="Business Name")
+    lead_table.heading("Contact Name", text="Contact Name")
+    lead_table.heading("Title", text="Title")
     lead_table.heading("Email", text="Email")
     lead_table.heading("Phone", text="Phone")
     lead_table.heading("Status", text="Status")
@@ -252,6 +269,7 @@ def create_gui():
     button_frame = tk.Frame(leads)
     button_frame.pack(pady=20)
     tk.Button(button_frame, text="Add Lead", command=add_lead_window, padx=5, pady=1).pack(side="left",padx=5)
+    tk.Button(button_frame, text="Delete Lead", command=delete_selected_lead, padx=5, pady=1).pack(side="left",padx=5)
     tk.Button(button_frame, text="Reload Table", command=populate_table, padx=5, pady=1).pack(side="left",padx=5)
 
     # Theme
