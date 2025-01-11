@@ -17,12 +17,12 @@ I created this for myself but you are welcome to use it yourself under the [MIT 
 I want this to run as fast as possible, with the goal of keeping the executable under a few hundred MB.
 
 Some other features include:
-- Adding, managing, removing data through forms
-- No server! Uses a single `.db` file locally. 
-- Exporting to common filetypes
-- Viewing data, reports, table relationships easily
-- Simple, *Fast AF*, `SQLite` backend
-- [Hot reloading](hot_reload.py) for insane productivity.
+- **Adding, managing, removing data** through forms.
+- **No server!** Uses a single `.db` file locally. 
+- **Exporting** to common file-types.
+- **Viewing data, reports, table relationships** easily.
+- **Simple, *Fast AF***, `SQLite` backend.
+- [Hot reloading](hot_reload.py) with [watchdog](https://pypi.org/project/watchdog/) for insane productivity.
 
 ## Navigation
 - [Frontend](frontend/gui.py)
