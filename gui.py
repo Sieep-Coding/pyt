@@ -226,7 +226,8 @@ def create_gui():
         file_path = filedialog.asksaveasfilename(
             defaultextension=".csv",
             filetypes=[("CSV files", "*.csv"),
-                       ("Excel", "*.xlsx"),
+                       #    ("Excel", "*.xlsx"),
+                       #    ("JSON", "*.json"),
                        ("All files", "*.*")],
         )
         if file_path:
