@@ -12,7 +12,7 @@ def create_gui():
         # Fetch contacts from the database and populate the table
         for contact in fetch_contacts():
             table.insert("", "end", values=contact)
-            
+
     def populate_project_table():
         for row in table.get_children():
             table.delete(row)
@@ -133,7 +133,7 @@ def create_gui():
     # Display the file and edit declared in previous step 
     menubar.add_cascade(label="File", menu=file) 
     menubar.add_cascade(label="Edit", menu=edit) 
-    root.configure(borderwidth=10, cursor="plus", menu=menubar)
+    root.configure(borderwidth=10, menu=menubar)
 
     # Modern Tabline
     tabline = tk.Frame(root)
@@ -144,7 +144,7 @@ def create_gui():
     frames = {}
 
     for tab in tabs:
-        btn = tk.Button(tabline, text=tab, command=lambda t=tab: switch_tab(t), padx=7, pady=3)
+        btn = tk.Button(tabline, text=tab, command=lambda t=tab: switch_tab(t), padx=7, pady=3, cursor="plus")
         btn.pack(side="left", padx=1, pady=1)
         frames[tab] = tk.Frame(root)
 
