@@ -15,8 +15,10 @@ I created this for myself but you are welcome to use it yourself under the [MIT 
 
 ## Core Features
 I want this to run as fast as possible, with the goal of keeping the executable under a few hundred MB.
+
 Some other features include:
 - Adding, managing, removing data through forms
+- No Server! Uses a single `.db` file locally. 
 - Exporting to common filetypes
 - Viewing data and reports easily
 - *Fast AF* `SQLite` backend
