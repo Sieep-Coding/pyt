@@ -1,6 +1,7 @@
 import csv
 import tkinter as tk
 from tkinter import ttk, messagebox, Menu, filedialog
+import tkinter.font
 from database import (
     fetch_contacts,
     add_contact,
@@ -14,8 +15,6 @@ from database import (
     delete_lead,
 )
 import sv_ttk
-
-font = "SimSun"
 
 
 def create_gui():
@@ -65,31 +64,31 @@ def create_gui():
         tk.Label(add_window, text="Business Name:").grid(
             row=0, column=0, padx=10, pady=5, sticky="nsew"
         )
-        business_name_entry = tk.Entry(add_window, font=(font, 12))
+        business_name_entry = tk.Entry(add_window, font=font)
         business_name_entry.grid(row=0, column=1, padx=20, pady=10, sticky="e")
 
         tk.Label(add_window, text="Contact Name:").grid(
             row=1, column=0, padx=20, pady=10, sticky="e"
         )
-        contact_name_entry = tk.Entry(add_window, font=(font, 12))
+        contact_name_entry = tk.Entry(add_window, font=font)
         contact_name_entry.grid(row=1, column=1, padx=20, pady=10, sticky="e")
 
         tk.Label(add_window, text="Email:").grid(
             row=2, column=0, padx=20, pady=10, sticky="e"
         )
-        email_entry = tk.Entry(add_window, font=(font, 12))
+        email_entry = tk.Entry(add_window, font=font)
         email_entry.grid(row=2, column=1, padx=20, pady=10, sticky="e")
 
         tk.Label(add_window, text="Phone:").grid(
             row=3, column=0, padx=20, pady=10, sticky="e"
         )
-        phone_entry = tk.Entry(add_window, font=(font, 12))
+        phone_entry = tk.Entry(add_window, font=font)
         phone_entry.grid(row=3, column=1, padx=20, pady=10, sticky="e")
 
         tk.Label(add_window, text="Status:").grid(
             row=4, column=0, padx=20, pady=10, sticky="e"
         )
-        status_entry = tk.Entry(add_window, font=(font, 12))
+        status_entry = tk.Entry(add_window, font=font)
         status_entry.grid(row=4, column=1, padx=20, pady=10, sticky="e")
 
         tk.Button(
@@ -120,37 +119,37 @@ def create_gui():
         tk.Label(add_window, text="Business Name:").grid(
             row=0, column=0, padx=10, pady=5, sticky="nsew"
         )
-        business_name_entry = tk.Entry(add_window, font=(font, 12))
+        business_name_entry = tk.Entry(add_window, font=font)
         business_name_entry.grid(row=0, column=1, padx=20, pady=10, sticky="e")
 
         tk.Label(add_window, text="Contact Name:").grid(
             row=1, column=0, padx=20, pady=10, sticky="e"
         )
-        contact_name_entry = tk.Entry(add_window, font=(font, 12))
+        contact_name_entry = tk.Entry(add_window, font=font)
         contact_name_entry.grid(row=1, column=1, padx=20, pady=10, sticky="e")
 
         tk.Label(add_window, text="Title:").grid(
             row=2, column=0, padx=20, pady=10, sticky="e"
         )
-        title_entry = tk.Entry(add_window, font=(font, 12))
+        title_entry = tk.Entry(add_window, font=font)
         title_entry.grid(row=2, column=1, padx=20, pady=10, sticky="e")
 
         tk.Label(add_window, text="Email:").grid(
             row=3, column=0, padx=20, pady=10, sticky="e"
         )
-        email_entry = tk.Entry(add_window, font=(font, 12))
+        email_entry = tk.Entry(add_window, font=font)
         email_entry.grid(row=3, column=1, padx=20, pady=10, sticky="e")
 
         tk.Label(add_window, text="Phone:").grid(
             row=4, column=0, padx=20, pady=10, sticky="e"
         )
-        phone_entry = tk.Entry(add_window, font=(font, 12))
+        phone_entry = tk.Entry(add_window, font=font)
         phone_entry.grid(row=4, column=1, padx=20, pady=10, sticky="e")
 
         tk.Label(add_window, text="Status:").grid(
             row=5, column=0, padx=20, pady=10, sticky="e"
         )
-        status_entry = tk.Entry(add_window, font=(font, 12))
+        status_entry = tk.Entry(add_window, font=font)
         status_entry.grid(row=5, column=1, padx=20, pady=10, sticky="e")
 
         tk.Button(
@@ -217,7 +216,9 @@ def create_gui():
     def export_to_csv():
         file_path = filedialog.asksaveasfilename(
             defaultextension=".csv",
-            filetypes=[("CSV files", "*.csv"), ("All files", "*.*")],
+            filetypes=[("CSV files", "*.csv"),
+                       ("Excel", "*.xlsx"),
+                       ("All files", "*.*")],
         )
         if file_path:
             try:
@@ -273,7 +274,9 @@ def create_gui():
 
     root = tk.Tk()
     root.title("pyt")
-
+    font = tkinter.font.Font(family="Courier New",
+                             size=12,
+                             weight="bold")
     menubar = Menu(root)
 
     file = Menu(menubar, tearoff=False)
