@@ -92,7 +92,11 @@ def create_gui():
         status_entry.grid(row=4, column=1, padx=20, pady=10, sticky="e")
 
         tk.Button(
-            add_window, text="Add Contact", command=submit_new_contact, padx=10, pady=5
+            add_window, text="Add Contact",
+            command=submit_new_contact,
+            padx=10,
+            pady=5,
+            font=font
         ).grid(row=5, column=0, columnspan=2, pady=20)
 
     def add_lead_window():
@@ -153,7 +157,12 @@ def create_gui():
         status_entry.grid(row=5, column=1, padx=20, pady=10, sticky="e")
 
         tk.Button(
-            add_window, text="Add Lead", command=submit_new_lead, padx=10, pady=5
+            add_window,
+            text="Add Lead",
+            command=submit_new_lead,
+            padx=10,
+            pady=5,
+            font=font
         ).grid(row=6, column=0, columnspan=2, pady=20)
 
     def delete_selected_contact():
@@ -275,7 +284,7 @@ def create_gui():
     root = tk.Tk()
     root.title("pyt")
     font = tkinter.font.Font(family="Courier New",
-                             size=12,
+                             size=9,
                              weight="bold")
     menubar = Menu(root)
 
@@ -309,7 +318,7 @@ def create_gui():
         "Contacts",
         "Leads",
         "Projects",
-        "Acoounts",
+        "Acounts",
         "Activities",
         "Services",
         "Reports",
@@ -324,6 +333,7 @@ def create_gui():
             padx=7,
             pady=3,
             cursor="plus",
+            font=font
         )
         btn.pack(side="left", padx=1, pady=1)
         frames[tab] = tk.Frame(root)
@@ -349,7 +359,12 @@ def create_gui():
     button_frame.pack(pady=20)
 
     tk.Button(
-        button_frame, text="Add Contact", command=add_contact_window, padx=5, pady=1
+        button_frame,
+        text="Add Contact",
+        command=add_contact_window,
+        padx=5,
+        pady=1,
+        font=font
     ).pack(side="left", padx=5)
     tk.Button(
         button_frame,
@@ -357,9 +372,22 @@ def create_gui():
         command=delete_selected_contact,
         padx=5,
         pady=1,
+        font=font
     ).pack(side="left", padx=5)
     tk.Button(
-        button_frame, text="Reload Table", command=populate_table, padx=5, pady=1
+        button_frame, text="Export",
+        command=populate_and_export,
+        padx=5,
+        pady=1,
+        font=font
+    ).pack(side="left", padx=5)
+    tk.Button(
+        button_frame,
+        text="Reload Table",
+        command=populate_table,
+        padx=5,
+        pady=1,
+        font=font
     ).pack(side="left", padx=5)
 
     # Projects
@@ -369,6 +397,7 @@ def create_gui():
         projects,
         columns=("ID", "Project Name", "Email", "Phone", "Status"),
         show="headings",
+        selectmode='browse'
     )
     proj_table.heading("ID", text="ID")
     proj_table.heading("Project Name", text="Project Name")
@@ -405,6 +434,7 @@ def create_gui():
             "Status",
         ),
         show="headings",
+        selectmode='browse',
     )
     lead_table.heading("ID", text="ID")
     lead_table.heading("Business Name", text="Business Name")
@@ -424,7 +454,7 @@ def create_gui():
         button_frame, text="Delete Lead", command=delete_selected_lead, padx=5, pady=1
     ).pack(side="left", padx=5)
     tk.Button(
-        button_frame, text="Export to CSV", command=populate_and_export, padx=5, pady=1
+        button_frame, text="Export", command=populate_and_export, padx=5, pady=1
     ).pack(side="left", padx=5)
     tk.Button(
         button_frame, text="Reload Table", command=populate_table, padx=5, pady=1
