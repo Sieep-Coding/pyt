@@ -22,10 +22,6 @@ freshbuild:
 db:
 	python init_db.py
 
-clean:
-	rm -f *.db
-	rm -rf __pycache__
-
 backup:
 	mkdir -p backup
 	cp *.db backup/

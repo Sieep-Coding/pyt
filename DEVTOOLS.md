@@ -34,3 +34,13 @@ make fresh
 ```
 make freshbuild
 ```
+### Initialize database only:
+```
+make db
+```
+### Create a new database backup:
+> [!TIP]  
+> Using this command will copy your database to folder `backup/`
+```
+make backup
+```
