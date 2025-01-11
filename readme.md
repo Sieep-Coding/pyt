@@ -2,6 +2,7 @@
 
 [![wakatime](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720.svg)](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+
 ![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ![](https://img.shields.io/badge/tkinter-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ![](https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
@@ -12,6 +13,7 @@
      style="float: left; margin-right: 10px;" 
      width=180px
      />
+
 A `Python` GUI to manage essential business data with `tkinter` and a *FAST* `SQLite` backend.
 
 > [!WARNING]  
