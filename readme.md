@@ -18,7 +18,7 @@ A GUI to manage essential business data.
 > [!WARNING]  
 > Not ready for a production environment (yet). *Use at your own risk.*
 
-## Manage Contacts, Projects, and more.
+## Manage Contacts, Projects, and More.
 ![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
 
 ## Core Features
