@@ -3,11 +3,6 @@ A python UI to manage essential business data with tkinter and a *FAST* sqlite b
 
 I created this for myself but you are welcome to use it yourself under the [MIT License.](LICENSE)
 
-#### But why?
-> "In the same way a woodworker invests the time in a jig, a programmer can build a code generator. 
-> Once built, it can be used throughout the life of the project at virtually no cost."
-> -- [*Andrew Hunt*](https://en.wikipedia.org/wiki/Andy_Hunt_(author))
-
 > [!WARNING]  
 > Not ready for a production enviroment (yet). Use at your own risk.
 
@@ -33,3 +28,8 @@ Some other features include:
 - [Tkinter](https://docs.python.org/3/library/tkinter.html)
 - [Sun Valley Theme](https://github.com/rdbende/Sun-Valley-ttk-theme/tree/main)
 - [Sqlite](https://www.sqlite.org/)
+
+#### But why?
+> "In the same way a woodworker invests the time in a jig, a programmer can build a code generator. 
+> Once built, it can be used throughout the life of the project at virtually no cost."
+> -- [*Andrew Hunt*](https://en.wikipedia.org/wiki/Andy_Hunt_(author))
