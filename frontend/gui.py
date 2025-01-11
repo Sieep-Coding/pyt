@@ -43,7 +43,9 @@ def create_gui():
         frames[tab_name].grid(row=1, column=0, sticky="nsew")
 
     def add_contact_window():
+        """Prompt the user to fill out a new contact."""
         def submit_new_contact():
+            """Send the new contact data to the db"""
             business_name = business_name_entry.get()
             contact_name = contact_name_entry.get()
             email = email_entry.get()
