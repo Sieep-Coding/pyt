@@ -44,6 +44,8 @@ Some other features include:
 - [Sqlite](https://www.sqlite.org/)
 
 ![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+![](https://img.shields.io/badge/tkinter-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+![](https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
 #### But why?
 > "In the same way a woodworker invests the time in a jig, a programmer can build a code generator. 
