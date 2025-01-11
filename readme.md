@@ -8,6 +8,10 @@
      style="float: left; margin-right: 10px;" 
      width=180px
      />
+     
+![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+![](https://img.shields.io/badge/tkinter-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+![](https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
 A `Python` GUI to manage essential business data with `tkinter` and a *FAST* `SQLite` backend.
 
@@ -42,10 +46,6 @@ Some other features include:
 - [Tkinter](https://docs.python.org/3/library/tkinter.html)
 - [Sun Valley Theme](https://github.com/rdbende/Sun-Valley-ttk-theme/tree/main)
 - [Sqlite](https://www.sqlite.org/)
-
-![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-![](https://img.shields.io/badge/tkinter-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-![](https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
 #### But why?
 > "In the same way a woodworker invests the time in a jig, a programmer can build a code generator. 
