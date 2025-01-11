@@ -11,7 +11,7 @@ I created this for myself but you are welcome to use it yourself under the [MIT 
 > Not ready for a production enviroment (yet). *Use at your own risk.*
 
 ## Manage Contacts, Projects, and more.
-![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image1.png)
+![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
 
 ## Core Features
 I want this to run as fast as possible, with the goal of keeping the executable under a few hundred MB.
