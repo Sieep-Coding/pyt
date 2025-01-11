@@ -21,7 +21,7 @@ Some other features include:
 - No server! Uses a single `.db` file locally. 
 - Exporting to common filetypes
 - Viewing data, reports, table relationships easily
-- A simple, *Fast AF*, `SQLite` backend
+- Simple, *Fast AF*, `SQLite` backend
 - [Hot reloading](hot_reload.py) for insane productivity.
 
 ## Navigation
