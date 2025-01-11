@@ -49,25 +49,25 @@ def create_gui():
         add_window.configure()
 
         # Form elements for adding a contact
-        tk.Label(add_window, text="Business Name:").grid(row=0, column=0, padx=10, pady=5, sticky="e")
+        tk.Label(add_window, text="Business Name:").grid(row=0, column=0, padx=10, pady=5, sticky="nsew")
         business_name_entry = tk.Entry(add_window, font=("Arial", 12))
-        business_name_entry.grid(row=0, column=1, padx=20, pady=10, sticky="ew")
+        business_name_entry.grid(row=0, column=1, padx=20, pady=10, sticky="nsew")
 
-        tk.Label(add_window, text="Contact Name:").grid(row=1, column=0, padx=20, pady=10, sticky="e")
+        tk.Label(add_window, text="Contact Name:").grid(row=1, column=0, padx=20, pady=10, ssticky="nsew")
         contact_name_entry = tk.Entry(add_window, font=("Arial", 12))
-        contact_name_entry.grid(row=1, column=1, padx=20, pady=10, sticky="ew")
+        contact_name_entry.grid(row=1, column=1, padx=20, pady=10, sticky="nsew")
 
-        tk.Label(add_window, text="Email:").grid(row=2, column=0, padx=20, pady=10, sticky="e")
+        tk.Label(add_window, text="Email:").grid(row=2, column=0, padx=20, pady=10, sticky="nsew")
         email_entry = tk.Entry(add_window, font=("Arial", 12))
-        email_entry.grid(row=2, column=1, padx=20, pady=10, sticky="ew")
+        email_entry.grid(row=2, column=1, padx=20, pady=10, sticky="nsew")
 
-        tk.Label(add_window, text="Phone:").grid(row=3, column=0, padx=20, pady=10, sticky="e")
+        tk.Label(add_window, text="Phone:").grid(row=3, column=0, padx=20, pady=10, sticky="nsew")
         phone_entry = tk.Entry(add_window, font=("Arial", 12))
-        phone_entry.grid(row=3, column=1, padx=20, pady=10, sticky="ew")
+        phone_entry.grid(row=3, column=1, padx=20, pady=10, sticky="nsew")
 
-        tk.Label(add_window, text="Status:").grid(row=4, column=0, padx=20, pady=10, sticky="e")
+        tk.Label(add_window, text="Status:").grid(row=4, column=0, padx=20, pady=10, sticky="nsew")
         status_entry = tk.Entry(add_window, font=("Arial", 12))
-        status_entry.grid(row=4, column=1, padx=20, pady=10, sticky="ew")
+        status_entry.grid(row=4, column=1, padx=20, pady=10, sticky="nsew")
 
         tk.Button(add_window, text="Add Contact", command=submit_new_contact, padx=10, pady=5).grid(row=5, column=0, columnspan=2, pady=20)
 
@@ -113,7 +113,6 @@ def create_gui():
 
     root = tk.Tk()
     root.title("pyt")
-    root.attributes('-fullscreen', False)
     
     menubar = Menu(root) 
   
@@ -136,11 +135,11 @@ def create_gui():
     menubar.add_cascade(label="View", menu=view) 
     view.add_command(label="Reports")
     
-    root.configure(borderwidth=10, menu=menubar)
+    root.configure(borderwidth=5, menu=menubar)
 
     
     tabline = tk.Frame(root)
-    tabline.grid(row=0, column=0, sticky="ew")
+    tabline.grid(row=0, column=0, sticky="nsew")
     tabline.grid_propagate(False)
 
     tabs = ["Contacts", "Projects", "Activities", "Services", "Reports"]
