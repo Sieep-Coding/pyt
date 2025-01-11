@@ -1,5 +1,9 @@
 # Development Tools Using Makefile
 
+I manage the environment through a [makefile,](https://www.gnu.org/software/make/manual/make.html)
+
+View the code [here.](makefile)
+
 > [!CAUTION]  
 > Using dev tools incorrectly can cause destruction of your data. *Use at your own risk.*
 
