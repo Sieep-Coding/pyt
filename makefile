@@ -20,7 +20,12 @@ clean:
 	rm -f *.db
 	rm -rf __pycache__
 
+backup:
+	mkdir -p backup
+	cp *.db backup/
+
 cleanbuild:
+	rm -f *.spec
 	rm -rf __pycache__
 	rm -rf build
 	rm -rf dist
