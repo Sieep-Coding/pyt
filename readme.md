@@ -11,8 +11,6 @@
 
 A `Python` GUI to manage essential business data with `tkinter` and a *FAST* `SQLite` backend.
 
-I created this for myself but you are welcome to use it yourself under the [MIT License.](LICENSE)
-
 > [!WARNING]  
 > Not ready for a production environment (yet). *Use at your own risk.*
 
