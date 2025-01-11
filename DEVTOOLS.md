@@ -16,6 +16,10 @@ make
 ```
 make dev
 ```
+### Run Unit Tests:
+```
+make test
+```
 ### Run *Production Build*:
 > [!TIP]  
 > Using this command will build an executable *and* run it.

@@ -2,6 +2,7 @@ all:
 	python main.py
 
 dev:
+	python -m unittest tests/*.py
 	python hot_reload.py
 
 build:
@@ -18,6 +19,9 @@ freshbuild:
 	rm -rf __pycache__
 	rm -rf build
 	rm -rf dist
+
+test:
+	python -m unittest tests/*.py
 
 db:
 	python init_db.py
