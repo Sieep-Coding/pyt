@@ -1,13 +1,13 @@
 all:
+	python main.py
+	
+dev:
 	python hot_reload.py
 
 fresh:
 	rm -f *.db
 	rm -rf __pycache__
 	python hot_reload.py
-
-main:
-	python main.py
 
 db:
 	python init_db.py
