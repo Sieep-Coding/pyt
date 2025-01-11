@@ -114,7 +114,7 @@ def create_gui():
     root = tk.Tk()
     root.title("pyt")
     root.attributes('-fullscreen', False)
-    root.configure(border=2, borderwidth=7)
+    root.configure(border=2, borderwidth=7, padx=5, pady=12)
 
     # Modern Tabline
     tabline = tk.Frame(root)
