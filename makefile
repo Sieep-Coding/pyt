@@ -13,6 +13,12 @@ fresh:
 	rm -rf __pycache__
 	python hot_reload.py
 
+freshbuild:
+	rm -f *.spec
+	rm -rf __pycache__
+	rm -rf build
+	rm -rf dist
+
 db:
 	python init_db.py
 
@@ -23,9 +29,3 @@ clean:
 backup:
 	mkdir -p backup
 	cp *.db backup/
-
-cleanbuild:
-	rm -f *.spec
-	rm -rf __pycache__
-	rm -rf build
-	rm -rf dist
