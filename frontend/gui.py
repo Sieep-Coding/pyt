@@ -61,7 +61,7 @@ def create_gui():
             add_window.destroy()
 
         add_window = tk.Toplevel(root)
-        add_window.title("Add New Contact")
+        add_window.title("spark - Add New Contact")
         add_window.configure()
 
         tk.Label(add_window, text="Business Name:").grid(
@@ -120,7 +120,7 @@ def create_gui():
             add_window.destroy()
 
         add_window = tk.Toplevel(root)
-        add_window.title("Add New Lead")
+        add_window.title("spark - Add New Lead")
         add_window.configure()
 
         tk.Label(add_window, text="Business Name:").grid(
@@ -286,7 +286,7 @@ def create_gui():
         export_to_csv()
 
     root = tk.Tk()
-    root.title("spark")
+    root.title("spark - Home")
     font = tkinter.font.Font(family="Ubuntu Light",
                              size=14,
                              weight="bold")
