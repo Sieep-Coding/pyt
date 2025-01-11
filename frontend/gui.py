@@ -283,8 +283,8 @@ def create_gui():
         export_to_csv()
 
     root = tk.Tk()
-    root.title("pyt")
-    font = tkinter.font.Font(family="Ubuntu Medium",
+    root.title("spark")
+    font = tkinter.font.Font(family="Ubuntu Light",
                              size=12,
                              weight="bold")
     font_menu = tkinter.font.Font(family="Ubuntu",
