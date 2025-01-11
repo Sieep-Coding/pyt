@@ -2,11 +2,18 @@
 
 A python UI to manage essential business data with tkinter and a *FAST* sqlite backend.
 
-I created this for myself, but you are welcome to use it yourself under the [MIT License.](LICENSE)
+I created this for myself but you are welcome to use it yourself under the [MIT License.](LICENSE)
 
 ## Manage Contacts, Projects, and more.
 
 ![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
+
+## Core Features
+
+- Add, manage, remove data through forms
+- Export to common filetypes
+- View data and reports easily
+- *Fast* SQLite backend
 
 ## Dependencies
 
