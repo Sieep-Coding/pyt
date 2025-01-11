@@ -20,8 +20,8 @@ Some other features include:
 - Adding, managing, removing data through forms
 - No server! Uses a single `.db` file locally. 
 - Exporting to common filetypes
-- Viewing data and reports easily
-- *Fast AF* `SQLite` backend
+- Viewing data, reports, table relationships easily
+- a simple, *Fast AF*, `SQLite` backend
 - [Hot reloading](hot_reload.py) for insane productivity.
 
 ## Navigation
