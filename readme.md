@@ -23,12 +23,14 @@ Some other features include:
 - Adding, managing, removing data through forms
 - Exporting to common filetypes
 - Viewing data and reports easily
-- *Fast* SQLite backend
+- *Fast af* SQLite backend
+- [Hot reloading](hot_reload.py) for insane productivity.
 
 ## Navigation
 
 - [Frontend](gui.py)
 - [Backend](database.py)
+- [Dev tools](makefile)
 
 ## Dependencies
 
