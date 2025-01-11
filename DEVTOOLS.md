@@ -7,6 +7,7 @@ View the code [here.](makefile)
 > [!CAUTION]  
 > Using dev tools incorrectly can cause destruction of your data. *Use at your own risk.*
 
+# Commands
 ### Run Local (non-production):
 ```
 make
