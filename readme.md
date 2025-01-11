@@ -8,7 +8,7 @@ A `Python` GUI to manage essential business data with `tkinter` and a *FAST* `SQ
 I created this for myself but you are welcome to use it yourself under the [MIT License.](LICENSE)
 
 > [!WARNING]  
-> Not ready for a production enviroment (yet). *Use at your own risk.*
+> Not ready for a production environment (yet). *Use at your own risk.*
 
 ## Manage Contacts, Projects, and more.
 ![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
