@@ -12,6 +12,8 @@ make
 make dev
 ```
 #### Run *Production Build*:
+> [!TIP]  
+> Using this command will build an executable *and* run it.
 ```
 make build
 ```
