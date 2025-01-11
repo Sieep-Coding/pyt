@@ -25,6 +25,11 @@ Some other features include:
 - Viewing data and reports easily
 - *Fast* SQLite backend
 
+## Navigation
+
+- [Frontend](gui.py)
+- [Backend](database.py)
+
 ## Dependencies
 
 - [Tkinter](https://docs.python.org/3/library/tkinter.html)
