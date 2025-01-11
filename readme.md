@@ -5,7 +5,7 @@ A simple interface to manage business data, written in python using tkinter with
 
 ## Manage Contacts, Projects, and more.
 
-![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
+![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image1-11.png)
 
 ## Dependencies
 
