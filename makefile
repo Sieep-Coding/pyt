@@ -1,8 +1,11 @@
 all:
 	python main.py
-	
+
 dev:
 	python hot_reload.py
+
+build:
+	pyinstaller main.py
 
 fresh:
 	rm -f *.db
