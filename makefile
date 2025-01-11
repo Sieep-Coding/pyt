@@ -6,6 +6,7 @@ dev:
 
 build:
 	pyinstaller main.py
+	cd dist/main && ./main
 
 fresh:
 	rm -f *.db
@@ -18,3 +19,8 @@ db:
 clean:
 	rm -f *.db
 	rm -rf __pycache__
+
+cleanbuild:
+	rm -rf __pycache__
+	rm -rf build
+	rm -rf dist
