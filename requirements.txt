@@ -1,1 +1,3 @@
 sv_ttk
+watchdog
+pyinstaller
