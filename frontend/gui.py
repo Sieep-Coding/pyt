@@ -37,6 +37,7 @@ def create_gui():
             lead_table.insert("", "end", values=lead)
 
     def switch_tab(tab_name):
+        """Identify the frame value and seamlessly switch to it."""
         for frame in frames.values():
             frame.grid_remove()
         frames[tab_name].grid(row=1, column=0, sticky="nsew")
