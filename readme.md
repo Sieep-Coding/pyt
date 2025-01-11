@@ -1,6 +1,6 @@
 # pyt
 
-A simple interface to manage business data, written in python using tkinter with a *FAST* sqlite backend.
+A python UI to manage essential business data with tkinter and a *FAST* sqlite backend.
 
 
 ## Manage Contacts, Projects, and more.
