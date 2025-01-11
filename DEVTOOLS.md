@@ -11,7 +11,7 @@ make
 ```
 make dev
 ```
-#### Run **Production Build**:
+#### Run *Production Build*:
 ```
 make build
 ```
