@@ -1,5 +1,5 @@
 # pyt
-A python UI to manage essential business data with tkinter and a *FAST* sqlite backend.
+A `python` UI to manage essential business data with `tkinter` and a *FAST* `sqlite` backend.
 
 I created this for myself but you are welcome to use it yourself under the [MIT License.](LICENSE)
 
@@ -15,7 +15,7 @@ Some other features include:
 - Adding, managing, removing data through forms
 - Exporting to common filetypes
 - Viewing data and reports easily
-- *Fast af* SQLite backend
+- *Fast AF* `SQLite` backend
 - [Hot reloading](hot_reload.py) for insane productivity.
 
 ## Navigation
