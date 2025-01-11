@@ -1,5 +1,6 @@
 P = python
 backup = backup/
+
 all:
 	$(P) main.py
 
