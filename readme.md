@@ -8,7 +8,7 @@ I created this for myself but you are welcome to use it yourself under the [MIT 
 
 > "In the same way a woodworker invests the time in a jig, a programmer can build a code generator. Once built, 
 > it can be used throughout the life of the project at virtually no cost."
-> [*Andrew Hunt*](https://en.wikipedia.org/wiki/Andy_Hunt_(author))
+> -- [*Andrew Hunt*](https://en.wikipedia.org/wiki/Andy_Hunt_(author))
 
 ## Manage Contacts, Projects, and more.
 
