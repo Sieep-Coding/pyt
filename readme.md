@@ -21,9 +21,9 @@ Some other features include:
 - [Hot reloading](hot_reload.py) for insane productivity.
 
 ## Navigation
-- [Frontend](gui.py)
-- [Backend](database.py)
-- [Dev docs](DEVTOOLS.md)
+- [Frontend](frontend/gui.py)
+- [Backend](backend/database.py)
+- [Dev docs](docs/DEVTOOLS.md)
 - [Dev tools](makefile)
 
 ## Dependencies

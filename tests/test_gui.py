@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from gui import create_gui
+from frontend.gui import create_gui
 
 
 class TestGUI(unittest.TestCase):

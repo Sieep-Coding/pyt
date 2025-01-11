@@ -2,7 +2,7 @@ import csv
 import tkinter as tk
 from tkinter import ttk, messagebox, Menu, filedialog
 import tkinter.font
-from database import (
+from backend.database import (
     fetch_contacts,
     add_contact,
     delete_contact,
