@@ -1,5 +1,6 @@
+import csv
 import tkinter as tk
-from tkinter import ttk, messagebox, Menu
+from tkinter import ttk, messagebox, Menu, filedialog
 from database import fetch_contacts, add_contact, delete_contact, add_project, fetch_projects, delete_project, fetch_leads, add_lead, update_lead, delete_lead
 import sv_ttk
 
@@ -179,6 +180,37 @@ def create_gui():
         update_selected_contact(contact_id)
         populate_table()
 
+    def export_to_csv():
+        file_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv"), ("All files", "*.*")])
+        if file_path:
+            try:
+                with open(file_path, "w", newline="") as file:
+                    writer = csv.writer(file)
+
+                    if frames["Contacts"].winfo_ismapped():
+                        writer.writerow(["ID", "Business Name", "Contact Name", "Email", "Phone", "Status"])
+                        for row_id in table.get_children():
+                            writer.writerow(table.item(row_id)["values"])
+                    elif frames["Projects"].winfo_ismapped():
+                        writer.writerow(["ID", "Project Name", "Email", "Phone", "Status"])
+                        for row_id in proj_table.get_children():
+                            writer.writerow(proj_table.item(row_id)["values"])
+                    elif frames["Leads"].winfo_ismapped():
+                        writer.writerow(["ID", "Business Name", "Contact Name", "Title", "Email", "Phone", "Status"])
+                        for row_id in lead_table.get_children():
+                            writer.writerow(lead_table.item(row_id)["values"])
+                    else:
+                        messagebox.showwarning("Warning", "No active table to export data from.")
+
+                messagebox.showinfo("Success", "Data exported successfully!")
+            except Exception as e:
+                messagebox.showerror("Error", f"Failed to export data: {str(e)}")
+    
+    def populate_and_export():
+        populate_table()
+        export_to_csv() 
+        
+
     root = tk.Tk()
     root.title("pyt")
     
@@ -271,6 +303,7 @@ def create_gui():
     button_frame.pack(pady=20)
     tk.Button(button_frame, text="Add Lead", command=add_lead_window, padx=5, pady=1).pack(side="left",padx=5)
     tk.Button(button_frame, text="Delete Lead", command=delete_selected_lead, padx=5, pady=1).pack(side="left",padx=5)
+    tk.Button(button_frame, text="Export to CSV", command=populate_and_export, padx=5, pady=1).pack(side="left", padx=5)
     tk.Button(button_frame, text="Reload Table", command=populate_table, padx=5, pady=1).pack(side="left",padx=5)
 
     # Theme
