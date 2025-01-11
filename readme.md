@@ -29,6 +29,10 @@ Some other features include:
 - [Dev tools](makefile)
 
 ## Dependencies
+
+> [!IMPORTANT]  
+> Only tested on Linux so far!
+
 - [Tkinter](https://docs.python.org/3/library/tkinter.html)
 - [Sun Valley Theme](https://github.com/rdbende/Sun-Valley-ttk-theme/tree/main)
 - [Sqlite](https://www.sqlite.org/)
