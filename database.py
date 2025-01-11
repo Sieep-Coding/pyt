@@ -24,9 +24,21 @@ def init_database():
         status TEXT
     )
     """)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS leads (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        business_name TEXT,
+        contact_name TEXT,
+        title TEXT,
+        email TEXT,
+        phone TEXT,
+        status TEXT
+    )
+    """)
 
     cursor.execute("SELECT COUNT(*) FROM contacts")
     cursor.execute("SELECT COUNT(*) FROM projects")
+    cursor.execute("SELECT COUNT(*) FROM leads")
     # if cursor.fetchone()[0] == 0:
     #     for business in BUSINESS_NAMES:
     #         contact_name = f"Contact {randint(1, 100)}"
@@ -64,6 +76,34 @@ def update_contact(business_name, contact_name, email, phone, status):
     cursor.execute(
         "UPDATE contacts (business_name, contact_name, email, phone, status) VALUES (?, ?, ?, ?, ?)",
         (business_name, contact_name, email, phone, status)
+    )
+    conn.commit()
+    conn.close()
+
+def fetch_leads():
+    conn = sqlite3.connect("business_contacts.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM leads")
+    leads = cursor.fetchall()
+    conn.close()
+    return leads
+
+def add_lead(business_name, contact_name, title, email, phone, status):
+    conn = sqlite3.connect("business_contacts.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO leads (business_name, contact_name, title, email, phone, status) VALUES (?, ?, ?, ?, ?, ?)",
+        (business_name, contact_name, title, email, phone, status)
+    )
+    conn.commit()
+    conn.close()
+
+def update_lead(business_name, contact_name, title, email, phone, status):
+    conn = sqlite3.connect("business_contacts.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "UPDATE leads (business_name, contact_name, title, email, phone, status) VALUES (?, ?, ?, ?, ?, ?)",
+        (business_name, contact_name, title, email, phone, status)
     )
     conn.commit()
     conn.close()

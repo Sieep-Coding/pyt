@@ -6,11 +6,13 @@ import sv_ttk
 def create_gui():
     def populate_table():
         """Populate the contacts table."""
+        table.delete(*table.get_children())
         for contact in fetch_contacts():
             table.insert("", "end", values=contact)
 
     def populate_project_table():
         """Populate the projects table."""
+        proj_table.delete(*proj_table.get_children())
         for project in fetch_projects():
             proj_table.insert("", "end", values=project)
 
@@ -160,7 +162,8 @@ def create_gui():
     button_frame.pack(pady=20)
 
     tk.Button(button_frame, text="Add Contact", command=add_contact_window, padx=5, pady=1).pack(side="left", padx=5)
-    tk.Button(button_frame, text="Delete Contact", command=delete_selected_contact, padx=5, pady=1).pack(padx=5)
+    tk.Button(button_frame, text="Delete Contact", command=delete_selected_contact, padx=5, pady=1).pack(side="left",padx=5)
+    tk.Button(button_frame, text="Reload Table", command=populate_table, padx=5, pady=1).pack(side="left",padx=5)
 
     # Projects
     projects = frames["Projects"]
