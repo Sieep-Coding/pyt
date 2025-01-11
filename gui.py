@@ -89,7 +89,7 @@ def create_gui():
 
             
             add_lead(business_name, contact_name, title, email, phone, status)
-            populate_table()
+            populate_lead_table()
             add_window.destroy()
 
         
@@ -201,6 +201,7 @@ def create_gui():
     
     view = Menu(menubar, tearoff=False)
     menubar.add_cascade(label="View", menu=view) 
+    view.add_command(label="Leads")
     view.add_command(label="Reports")
 
     root.configure(borderwidth=5, menu=menubar)
@@ -263,7 +264,7 @@ def create_gui():
     lead_table.heading("Title", text="Title")
     lead_table.heading("Email", text="Email")
     lead_table.heading("Phone", text="Phone")
-    lead_table.heading("Status", text="Status")
+    lead_table.heading("Status", text="Lead Status")
     lead_table.pack(fill="both", expand=True)
 
     button_frame = tk.Frame(leads)
