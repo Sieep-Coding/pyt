@@ -5,7 +5,7 @@ I manage the environment through a [makefile,](https://www.gnu.org/software/make
 View the code [here.](makefile)
 
 > [!CAUTION]  
-> Using dev tools incorrectly can cause destruction of your data. *Use at your own risk.*
+> Using dev tools incorrectly can cause destruction of your sensitive data. *Use at your own risk.*
 
 # Commands
 ### Run Local (non-production):
