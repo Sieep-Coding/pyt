@@ -284,11 +284,12 @@ def create_gui():
 
     root = tk.Tk()
     root.title("pyt")
-    font = tkinter.font.Font(family="Ubuntu Light",
-                             size=11,
+    font = tkinter.font.Font(family="Ubuntu Medium",
+                             size=12,
                              weight="bold")
     font_menu = tkinter.font.Font(family="Ubuntu",
-                                  size=8)
+                                  size=9,
+                                  underline=True)
     menubar = Menu(root, font=font_menu)
 
     file = Menu(menubar, tearoff=False, font=font_menu)
