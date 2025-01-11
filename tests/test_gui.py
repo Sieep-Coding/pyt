@@ -5,7 +5,7 @@ from frontend.gui import create_gui
 
 class TestGUI(unittest.TestCase):
 
-    @patch('gui.fetch_contacts')
+    @patch('frontend.gui.fetch_contacts')
     def test_populate_table(self, mock_fetch_contacts):
         # Mock the return value of fetch_contacts
         mock_fetch_contacts.return_value = [
@@ -28,7 +28,7 @@ class TestGUI(unittest.TestCase):
         mock_table.delete.assert_called_once()
         self.assertEqual(mock_table.insert.call_count, 2)
 
-    @patch('gui.add_contact')
+    @patch('frontend.gui.add_contact')
     def test_add_contact_window(self, mock_add_contact):
         mock_add_contact.return_value = None
 
