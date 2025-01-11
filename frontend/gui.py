@@ -288,10 +288,10 @@ def create_gui():
     root = tk.Tk()
     root.title("spark")
     font = tkinter.font.Font(family="Ubuntu Light",
-                             size=12,
+                             size=14,
                              weight="bold")
     font_menu = tkinter.font.Font(family="Ubuntu",
-                                  size=9,
+                                  size=10,
                                   underline=True)
     menubar = Menu(root, font=font_menu, cursor="plus")
 

@@ -1,9 +1,11 @@
+P = python
+backup = backup/
 all:
-	python main.py
+	$(P) main.py
 
 dev:
-	python -m unittest tests/*.py
-	python hot_reload.py
+	$(P) -m unittest tests/*.py
+	$(P) hot_reload.py
 
 build:
 	pyinstaller main.py
@@ -12,7 +14,7 @@ build:
 fresh:
 	rm -f *.db
 	rm -rf __pycache__
-	python hot_reload.py
+	$(P) hot_reload.py
 
 freshbuild:
 	rm -f *.spec
@@ -21,11 +23,16 @@ freshbuild:
 	rm -rf dist
 
 test:
-	python -m unittest tests/*.py
+	$(P) -m unittest tests/*.py
 
 db:
-	python init_db.py
+	$(P) init_db.py
 
-backup:
-	mkdir -p backup
-	cp *.db backup/
+backup: .FORCE
+	mkdir -p $(backup)
+	cp *.db $(backup)
+	cp *.csv $(backup)
+
+.FORCE:
+
+.PHONY: backup
