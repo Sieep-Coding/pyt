@@ -43,6 +43,8 @@ Some other features include:
 - [Sun Valley Theme](https://github.com/rdbende/Sun-Valley-ttk-theme/tree/main)
 - [Sqlite](https://www.sqlite.org/)
 
+![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
 #### But why?
 > "In the same way a woodworker invests the time in a jig, a programmer can build a code generator. 
 > Once built, it can be used throughout the life of the project at virtually no cost."
