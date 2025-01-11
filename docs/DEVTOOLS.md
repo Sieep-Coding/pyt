@@ -9,42 +9,43 @@ View the code [here.](makefile)
 
 # Commands
 ### Run Local (non-production):
-```
+```bash
+make install #install requirements.txt
 make
 ```
 ### Run dev environment (non-production):
-```
+```bash
 make dev
 ```
 ### Run Unit Tests:
-```
+```bash
 make test
 ```
 ### Run *Production Build*:
 > [!TIP]  
 > Using this command will build an executable *and* run it.
-```
+```bash
 make build
 ```
 ### Cleanup local files:
 > [!CAUTION]  
 > You will lose your data.
-```
+```bash
 make fresh
 ```
 ### Cleanup build files:
 > [!CAUTION]  
 > You will lose your data.
-```
+```bash
 make freshbuild
 ```
 ### Initialize database only:
-```
+```bash
 make db
 ```
 ### Create a new database backup:
 > [!TIP]  
 > Using this command will copy your database to folder `backup/`
-```
+```bash
 make backup
 ```

@@ -4,6 +4,9 @@ backup = backup/
 all:
 	$(P) main.py
 
+install:
+	pip install -r requirements.txt
+
 dev:
 	$(P) -m unittest tests/*.py
 	$(P) hot_reload.py
