@@ -211,7 +211,7 @@ def create_gui():
     tabline.grid(row=0, column=0, sticky="nsew")
     tabline.grid_propagate(False)
 
-    tabs = ["Contacts", "Leads", "Projects", "Activities", "Services", "Reports"]
+    tabs = ["Contacts", "Leads", "Projects", "Acoounts", "Activities", "Services", "Reports"]
     frames = {}
 
     for tab in tabs:
@@ -281,5 +281,5 @@ def create_gui():
     populate_lead_table()
 
     switch_tab("Contacts")
-    root.resizable(True, True)
+    root.resizable(False, False)
     root.mainloop()
