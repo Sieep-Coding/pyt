@@ -117,26 +117,24 @@ def create_gui():
     
     menubar = Menu(root) 
   
-    
-
     file = Menu(menubar, tearoff=False) 
+    menubar.add_cascade(label="File", menu=file) 
     file.add_command(label="New") 
     file.add_command(label="Exit", command=root.quit) 
-    menubar.add_cascade(label="File", menu=file) 
     
     edit = Menu(menubar, tearoff=False)
+    menubar.add_cascade(label="Edit", menu=edit) 
     edit.add_command(label="Cut") 
     edit.add_command(label="Copy") 
     edit.add_command(label="Paste")
-    menubar.add_cascade(label="Edit", menu=edit) 
 
     selection = Menu(menubar, tearoff=False)
-    selection.add_command(label="Select All") 
     menubar.add_cascade(label="Selection", menu=selection) 
+    selection.add_command(label="Select All") 
     
     view = Menu(menubar, tearoff=False)
-    view.add_command(label="New")
     menubar.add_cascade(label="View", menu=view) 
+    view.add_command(label="Reports")
     
     root.configure(borderwidth=10, menu=menubar)
 
