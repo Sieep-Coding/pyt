@@ -2,6 +2,7 @@
 
 A python UI to manage essential business data with tkinter and a *FAST* sqlite backend.
 
+I created this for myself, but you are welcome to use it yourself under the [MIT License.](LICENSE)
 
 ## Manage Contacts, Projects, and more.
 
