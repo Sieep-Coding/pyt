@@ -5,6 +5,7 @@ A python UI to manage essential business data with tkinter and a *FAST* sqlite b
 I created this for myself but you are welcome to use it yourself under the [MIT License.](LICENSE)
 
 > "In the same way a woodworker invests the time in a jig, a programmer can build a code generator. Once built, it can be used throughout the life of the project at virtually no cost."
+> 
 > Andrew Hunt
 
 ## Manage Contacts, Projects, and more.
