@@ -18,6 +18,14 @@ make dev
 make build
 ```
 #### Cleanup local files:
+> [!CAUTION]  
+> You will lose your data.
 ```
 make fresh
+```
+#### Cleanup build files:
+> [!CAUTION]  
+> You will lose your data.
+```
+make freshbuild
 ```
