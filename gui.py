@@ -284,9 +284,9 @@ def create_gui():
 
     root = tk.Tk()
     root.title("pyt")
-    font = tkinter.font.Font(family="Ubuntu Medium",
+    font = tkinter.font.Font(family="Ubuntu",
                              size=11,
-                             weight="bold")
+                             weight="normal")
     font_menu = tkinter.font.Font(family="Ubuntu",
                                   size=8)
     menubar = Menu(root, font=font_menu)
