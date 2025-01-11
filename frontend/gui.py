@@ -290,29 +290,29 @@ def create_gui():
     font_menu = tkinter.font.Font(family="Ubuntu",
                                   size=9,
                                   underline=True)
-    menubar = Menu(root, font=font_menu)
+    menubar = Menu(root, font=font_menu, cursor="plus")
 
-    file = Menu(menubar, tearoff=False, font=font_menu)
+    file = Menu(menubar, tearoff=False, font=font_menu, cursor="plus")
     menubar.add_cascade(label="File", menu=file)
     file.add_command(label="New")
     file.add_command(label="Exit", command=root.quit)
 
-    edit = Menu(menubar, tearoff=False, font=font_menu)
+    edit = Menu(menubar, tearoff=False, font=font_menu, cursor="plus")
     menubar.add_cascade(label="Edit", menu=edit)
     edit.add_command(label="Cut")
     edit.add_command(label="Copy")
     edit.add_command(label="Paste")
 
-    selection = Menu(menubar, tearoff=False, font=font_menu)
+    selection = Menu(menubar, tearoff=False, font=font_menu, cursor="plus")
     menubar.add_cascade(label="Selection", menu=selection)
     selection.add_command(label="Select All")
 
-    view = Menu(menubar, tearoff=False, font=font_menu)
+    view = Menu(menubar, tearoff=False, font=font_menu, cursor="plus")
     menubar.add_cascade(label="View", menu=view)
     view.add_command(label="Leads")
     view.add_command(label="Reports")
 
-    root.configure(borderwidth=5, menu=menubar)
+    root.configure(borderwidth=5, menu=menubar, cursor="plus")
 
     tabline = tk.Frame(root)
     tabline.grid(row=0, column=0, sticky="nsew")
