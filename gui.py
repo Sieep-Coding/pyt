@@ -115,27 +115,32 @@ def create_gui():
     root.title("pyt")
     root.attributes('-fullscreen', False)
     
-    menubar = Menu(root, background='blue', fg='white') 
+    menubar = Menu(root) 
   
-    # Declare file and edit for showing in menubar 
-    file = Menu(menubar, tearoff=False) 
-    edit = Menu(menubar, tearoff=False) 
     
-    # Add commands in in file menu 
+
+    file = Menu(menubar, tearoff=False) 
     file.add_command(label="New") 
     file.add_command(label="Exit", command=root.quit) 
+    menubar.add_cascade(label="File", menu=file) 
     
-    # Add commands in edit menu 
+    edit = Menu(menubar, tearoff=False)
     edit.add_command(label="Cut") 
     edit.add_command(label="Copy") 
-    edit.add_command(label="Paste") 
-    
-    # Display the file and edit declared in previous step 
-    menubar.add_cascade(label="File", menu=file) 
+    edit.add_command(label="Paste")
     menubar.add_cascade(label="Edit", menu=edit) 
+
+    selection = Menu(menubar, tearoff=False)
+    selection.add_command(label="Select All") 
+    menubar.add_cascade(label="Selection", menu=selection) 
+    
+    view = Menu(menubar, tearoff=False)
+    view.add_command(label="New")
+    menubar.add_cascade(label="View", menu=view) 
+    
     root.configure(borderwidth=10, menu=menubar)
 
-    # Modern Tabline
+    
     tabline = tk.Frame(root)
     tabline.grid(row=0, column=0, sticky="ew")
     tabline.grid_propagate(False)
