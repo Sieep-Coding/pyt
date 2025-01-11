@@ -5,7 +5,7 @@ A python UI to manage essential business data with tkinter and a *FAST* sqlite b
 
 ## Manage Contacts, Projects, and more.
 
-![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image1-11.png)
+![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
 
 ## Dependencies
 

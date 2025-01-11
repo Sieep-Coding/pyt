@@ -283,27 +283,29 @@ def create_gui():
 
     root = tk.Tk()
     root.title("pyt")
-    font = tkinter.font.Font(family="Courier New",
-                             size=9,
+    font = tkinter.font.Font(family="Ubuntu Medium",
+                             size=11,
                              weight="bold")
-    menubar = Menu(root)
+    font_menu = tkinter.font.Font(family="Ubuntu",
+                                  size=8)
+    menubar = Menu(root, font=font_menu)
 
-    file = Menu(menubar, tearoff=False)
+    file = Menu(menubar, tearoff=False, font=font_menu)
     menubar.add_cascade(label="File", menu=file)
     file.add_command(label="New")
     file.add_command(label="Exit", command=root.quit)
 
-    edit = Menu(menubar, tearoff=False)
+    edit = Menu(menubar, tearoff=False, font=font_menu)
     menubar.add_cascade(label="Edit", menu=edit)
     edit.add_command(label="Cut")
     edit.add_command(label="Copy")
     edit.add_command(label="Paste")
 
-    selection = Menu(menubar, tearoff=False)
+    selection = Menu(menubar, tearoff=False, font=font_menu)
     menubar.add_cascade(label="Selection", menu=selection)
     selection.add_command(label="Select All")
 
-    view = Menu(menubar, tearoff=False)
+    view = Menu(menubar, tearoff=False, font=font_menu)
     menubar.add_cascade(label="View", menu=view)
     view.add_command(label="Leads")
     view.add_command(label="Reports")
@@ -318,7 +320,7 @@ def create_gui():
         "Contacts",
         "Leads",
         "Projects",
-        "Acounts",
+        "Accounts",
         "Activities",
         "Services",
         "Reports",
@@ -408,15 +410,20 @@ def create_gui():
 
     button_frame = tk.Frame(projects)
     button_frame.pack(pady=20)
-    tk.Button(button_frame, text="Add Project", padx=5, pady=1).pack(
-        side="left", padx=5
-    )
+    tk.Button(
+        button_frame,
+        text="Add Project",
+        padx=5,
+        pady=1,
+        font=font
+    ).pack(side="left", padx=5)
     tk.Button(
         button_frame,
         text="Delete Project",
         command=delete_selected_project,
         padx=5,
         pady=1,
+        font=font
     ).pack(padx=5)
 
     # Leads
@@ -448,16 +455,36 @@ def create_gui():
     button_frame = tk.Frame(leads)
     button_frame.pack(pady=20)
     tk.Button(
-        button_frame, text="Add Lead", command=add_lead_window, padx=5, pady=1
+        button_frame,
+        text="Add Lead",
+        command=add_lead_window,
+        padx=5,
+        pady=1,
+        font=font
     ).pack(side="left", padx=5)
     tk.Button(
-        button_frame, text="Delete Lead", command=delete_selected_lead, padx=5, pady=1
+        button_frame,
+        text="Delete Lead",
+        command=delete_selected_lead,
+        padx=5,
+        pady=1,
+        font=font
     ).pack(side="left", padx=5)
     tk.Button(
-        button_frame, text="Export", command=populate_and_export, padx=5, pady=1
+        button_frame,
+        text="Export",
+        command=populate_and_export,
+        padx=5,
+        pady=1,
+        font=font
     ).pack(side="left", padx=5)
     tk.Button(
-        button_frame, text="Reload Table", command=populate_table, padx=5, pady=1
+        button_frame,
+        text="Reload Table",
+        command=populate_table,
+        padx=5,
+        pady=1,
+        font=font
     ).pack(side="left", padx=5)
 
     # Theme
