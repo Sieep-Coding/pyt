@@ -30,6 +30,7 @@ Some other features include:
 
 - [Frontend](gui.py)
 - [Backend](database.py)
+- [Dev docs](DEVTOOLS.md)
 - [Dev tools](makefile)
 
 ## Dependencies
