@@ -17,11 +17,11 @@ def init_database():
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS projects (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        project_name TEXT,
-        proj_contact_name TEXT,
-        proj_email TEXT,
-        proj_phone TEXT,
-        proj_status TEXT
+        business_name TEXT,
+        contact_name TEXT,
+        email TEXT,
+        phone TEXT,
+        status TEXT
     )
     """)
 

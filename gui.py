@@ -71,51 +71,6 @@ def create_gui():
 
         tk.Button(add_window, text="Add Contact", command=submit_new_contact, padx=10, pady=5).grid(row=5, column=0, columnspan=2, pady=20)
 
-    def add_project_window():
-        def submit_new_project():
-            project_name = project_name_entry.get()
-            proj_email = email_entry.get()
-            proj_phone = phone_entry.get()
-            proj_status = proj_status_entry.get()
-
-            # Check if all fields are filled
-            if not all([project_name, proj_email, proj_phone, proj_status]):
-                messagebox.showerror("Error", "All fields are required.")
-                return
-
-            # Call the add_contact function from the database module
-            add_project(project_name, proj_email, proj_phone, proj_status)
-            populate_table()
-            add_window.destroy()
-
-
-        add_window = tk.Toplevel(root)
-        add_window.title("Add New Project")
-        add_window.configure()
-
-        tk.Label(add_window, text="Project Name:").grid(row=1, column=0, padx=20, pady=10, sticky="e")
-        project_name_entry = tk.Entry(add_window, font=("Arial", 12))
-        project_name_entry.grid(row=1, column=1, padx=20, pady=10, sticky="ew")
-
-        tk.Label(add_window, text="Contact Name:").grid(row=1, column=0, padx=20, pady=10, sticky="e")
-        contact_name_entry = tk.Entry(add_window, font=("Arial", 12))
-        contact_name_entry.grid(row=1, column=1, padx=20, pady=10, sticky="ew")
-
-        tk.Label(add_window, text="Email:").grid(row=2, column=0, padx=20, pady=10, sticky="e")
-        email_entry = tk.Entry(add_window, font=("Arial", 12))
-        email_entry.grid(row=2, column=1, padx=20, pady=10, sticky="ew")
-
-        tk.Label(add_window, text="Phone:").grid(row=3, column=0, padx=20, pady=10, sticky="e")
-        phone_entry = tk.Entry(add_window, font=("Arial", 12))
-        phone_entry.grid(row=3, column=1, padx=20, pady=10, sticky="ew")
-
-        tk.Label(add_window, text="Project Status:").grid(row=4, column=0, padx=20, pady=10, sticky="e")
-        proj_status_entry = tk.Entry(add_window, font=("Arial", 12))
-        proj_status_entry.grid(row=4, column=1, padx=20, pady=10, sticky="ew")
-
-        tk.Button(add_window, text="Add Project", command=submit_new_project, padx=10, pady=5).grid(row=5, column=0, columnspan=2, pady=20)
-
-
     def delete_selected_contact():
         selected_item = table.selection()
         if not selected_item:
@@ -157,16 +112,16 @@ def create_gui():
         populate_table()
 
     root = tk.Tk()
-    root.title("Business Contact Manager")
+    root.title("pyt")
     root.attributes('-fullscreen', False)
-    root.configure()
+    root.configure(borderwidth=7)
 
     # Modern Tabline
     tabline = tk.Frame(root)
     tabline.grid(row=0, column=0, sticky="ew")
     tabline.grid_propagate(False)
 
-    tabs = ["Contacts", "Leads", "Projects"]
+    tabs = ["Contacts", "Projects", "Activities", "Services", "Reports"]
     frames = {}
 
     for tab in tabs:
@@ -205,7 +160,7 @@ def create_gui():
     
     button_frame = tk.Frame(projects)
     button_frame.pack(pady=20)
-    tk.Button(button_frame, text="Add Project", command=add_project_window, padx=5, pady=1).pack(side="left", padx=5)
+    tk.Button(button_frame, text="Add Project", padx=5, pady=1).pack(side="left", padx=5)
     tk.Button(button_frame, text="Delete Project", command=delete_selected_project, padx=5, pady=1).pack(padx=5)
 
     # Theme
