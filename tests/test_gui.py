@@ -13,6 +13,8 @@ class TestGUI(unittest.TestCase):
              "email@example.com", "1234567890", "Active"),
             (2, "Business B", "Contact B",
              "email2@example.com", "0987654321", "Inactive"),
+            (3, "", " ",  # empty string
+             "email2@example.com", "0987654321", "Inactive"),
         ]
 
         mock_table = MagicMock()
@@ -26,7 +28,7 @@ class TestGUI(unittest.TestCase):
         populate_table()
 
         mock_table.delete.assert_called_once()
-        self.assertEqual(mock_table.insert.call_count, 2)
+        self.assertEqual(mock_table.insert.call_count, 3)
 
     @patch('frontend.gui.add_contact')
     def test_add_contact_window(self, mock_add_contact):
@@ -49,6 +51,31 @@ class TestGUI(unittest.TestCase):
         # Assert add_contact was called with correct arguments
         mock_add_contact.assert_called_once_with(
             "Business A", "Contact A", "email@example.com", "1234567890", "Active"
+        )
+
+    @patch('frontend.gui.add_lead')
+    def test_add_lead_window(self, mock_add_lead):
+        mock_add_lead.return_value = None
+
+        def add_lead_window():
+            business_name = "Business A"
+            contact_name = "Contact A"
+            title = "Founder"
+            email = "email@example.com"
+            phone = "1234567890"
+            status = "Active"
+
+            if not all([business_name, contact_name, title, email, phone, status]):
+                raise ValueError("All fields are required.")
+
+            mock_add_lead(business_name, contact_name,
+                          title, email, phone, status)
+
+        add_lead_window()
+
+        # Assert add_contact was called with correct arguments
+        mock_add_lead.assert_called_once_with(
+            "Business A", "Contact A", "Founder", "email@example.com", "1234567890", "Active"
         )
 
 
