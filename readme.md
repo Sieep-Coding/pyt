@@ -2,7 +2,7 @@
 
 A GUI to manage essential business data.
 
-[![wakatime](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720.svg)](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720)
+<!-- [![wakatime](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720.svg)](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720) -->
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Version: 3.13.7](https://img.shields.io/badge/python-3.13.7-blue.svg)
 ![Version: 3.45.3](https://img.shields.io/badge/SQLite-3.45.3-blue.svg)
