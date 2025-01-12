@@ -21,28 +21,28 @@
 > [!WARNING]  
 > Not ready for a production environment (yet). *Use at your own risk.*
 
-## Core Features
+## Core Features 💪
 I want this to run as fast as possible, with the goal of keeping the executable under a few hundred MB.
 
 Some other features include:
-- **Adding, managing, removing data** through forms.
+- **Adding, managing, removing data** through forms. 📃
 - **No server!** 
-  - Relies on a single `.db` file locally. 
-- **Exporting** to common file-types.
-- **Viewing data, reports, table relationships** easily.
-- **Simple, *Fast AF***, `SQLite` backend.
-- [Hot reloading](hot_reload.py) with [watchdog](https://pypi.org/project/watchdog/) for insane productivity.
+  - Relies on a single `.db` file locally. 🍻
+- **Exporting** to common file-types. 💾
+- **Viewing data, reports, table relationships** easily. 📊
+- **Simple, *Fast AF***, `SQLite` backend. 🏃‍➡️
+- [Hot reloading](hot_reload.py) with [watchdog](https://pypi.org/project/watchdog/) for insane productivity. ⏰
 
 ### Manage Contacts, Projects, and More.
 ![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
 
-## Navigation
+## Navigation 🧭
 - [Frontend](frontend/gui.py)
 - [Backend](backend/database.py)
 - [Dev docs](docs/DEVTOOLS.md)
 - [Dev tools](makefile)
 
-## Dependencies
+## Dependencies ✍️
 
 > [!IMPORTANT]  
 > Only tested on Linux so far!
@@ -51,7 +51,7 @@ Some other features include:
 - [Sun Valley Theme](https://github.com/rdbende/Sun-Valley-ttk-theme/tree/main)
 - [Sqlite](https://www.sqlite.org/)
 
-> #### But why?
+> #### But why? 🤔
 > "In the same way a **woodworker** invests the time in a jig, a **programmer** can build a code generator. 
 > Once built, it can be used throughout the life of the project **at virtually no cost.**"
 > -- [*Andrew Hunt*](https://en.wikipedia.org/wiki/Andy_Hunt_(author))
