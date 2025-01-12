@@ -26,7 +26,7 @@ I want this to run as fast as possible, with the goal of keeping the executable 
 
 Some other features include:
 - **Adding, managing, removing data** through forms. 📃
-- **No server!** 
+- **No server!** 🙀 
   - Relies on a single `.db` file locally. 🍻
 - **Exporting** to common file-types. 💾
 - **Viewing data, reports, table relationships** easily. 📊
