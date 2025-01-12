@@ -54,7 +54,7 @@ make db
 ```
 ### Create a new database backup:
 > [!TIP]  
-> Using this command will copy your database to folder `backup/`
+> Using this command will copy your database and flat data files to folder `backup/`
 ```bash
 make backup
 ```
