@@ -1,5 +1,8 @@
 # Development Tools Using Makefile
 
+> [!CAUTION]  
+> Using dev tools incorrectly can cause destruction of your sensitive data. *Use at your own risk.*
+
 I manage the environment through a [makefile,](https://www.gnu.org/software/make/manual/make.html)
 
 View the code [here.](makefile)
@@ -12,9 +15,6 @@ View the code [here.](makefile)
 | `make`                    | Run Local                                        |
 | `make dev`                | Run Dev Environment                              |
 | `make backup`             | Backup database/flat data files.                 |
-
-> [!CAUTION]  
-> Using dev tools incorrectly can cause destruction of your sensitive data. *Use at your own risk.*
 
 # Commands
 ### Run Local (non-production):
