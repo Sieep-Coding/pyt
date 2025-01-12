@@ -7,6 +7,8 @@ A GUI to manage essential business data.
 ![Version: 3.13.7](https://img.shields.io/badge/python-3.13.7-blue.svg)
 ![Version: 3.45.3](https://img.shields.io/badge/SQLite-3.45.3-blue.svg)
 ![Version: 4.3](https://img.shields.io/badge/Makefile-4.3-blue.svg)
+![WSL Passing](https://img.shields.io/badge/WSL-Passing-green.svg)
+![Ubuntu Passing](https://img.shields.io/badge/Ubuntu-Passing-green.svg)
 
 <img src="https://github.com/Sieep-Coding/pyt/blob/main/assets/p.png"
      alt="Spark Logo"
