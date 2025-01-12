@@ -6,7 +6,7 @@
        width="120px" 
        /> -->
 
-<img src="https://github.com/Sieep-Coding/pyt/blob/main/assets/p.png" align="right" width="80" alt="Spark Logo" style="float: right;margin-right: 7px;margin-top: 7px;">
+<img src="https://github.com/Sieep-Coding/pyt/blob/main/assets/p.png" align="right" width="180" alt="Spark Logo" style="float: right;margin-right: 7px;margin-top: 7px;">
 `spark` is a GUI to manage essential business data. It is a **lightweight, fast, local-only** application designed for my personal use-case
 but applicable to small businesses or individuals who need an efficient tool for **organizing contacts, tracking leads, running simple exports to excel, and managing tasks/projects** without relying on cloud services or heavy enterprise solutions.
 
