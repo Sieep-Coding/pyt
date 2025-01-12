@@ -1,13 +1,14 @@
 # `spark` - *S*ystem for *P*rogressive and *A*ctive *R*elationship *K*eeping
-<div style="position: relative;">
-    <img src="https://github.com/Sieep-Coding/pyt/blob/main/assets/p.png"
-        alt="Spark Logo"
-        style="position: absolute; top: 0; right: 0; margin: 10px;"
-        width="140px" 
-        />
 
-    `spark` is a GUI to manage essential business data. It is a **lightweight, fast, local-only** application designed for my personal use-case but applicable to small businesses or individuals who need an efficient tool for **organizing contacts, tracking leads, running simple exports to excel, and managing tasks/projects** without relying on cloud services or heavy enterprise solutions.
-</div>
+<!-- <img src="https://github.com/Sieep-Coding/pyt/blob/main/assets/p.png"
+       alt="Spark Logo"
+       style="position: absolute; top: 0; right: 0; margin: 10px;"
+       width="120px" 
+       /> -->
+
+<img align="right" width="120" src="https://github.com/Sieep-Coding/pyt/blob/main/assets/p.png">
+
+`spark` is a GUI to manage essential business data. It is a **lightweight, fast, local-only** application designed for my personal use-case but applicable to small businesses or individuals who need an efficient tool for **organizing contacts, tracking leads, running simple exports to excel, and managing tasks/projects** without relying on cloud services or heavy enterprise solutions.
 
 <!-- [![wakatime](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720.svg)](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720) -->
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
