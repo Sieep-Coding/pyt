@@ -39,8 +39,10 @@ Some other features include:
 ## Navigation 🧭
 - [Frontend](frontend/gui.py)
 - [Backend](backend/database.py)
+- [Tests](tests/)
 - [Dev docs](docs/DEVTOOLS.md)
 - [Dev tools](makefile)
+- [License](LICENSE)
 
 ## Dependencies ✍️
 
