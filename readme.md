@@ -18,9 +18,6 @@ A GUI to manage essential business data.
 > [!WARNING]  
 > Not ready for a production environment (yet). *Use at your own risk.*
 
-## Manage Contacts, Projects, and More.
-![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
-
 ## Core Features
 I want this to run as fast as possible, with the goal of keeping the executable under a few hundred MB.
 
@@ -31,6 +28,9 @@ Some other features include:
 - **Viewing data, reports, table relationships** easily.
 - **Simple, *Fast AF***, `SQLite` backend.
 - [Hot reloading](hot_reload.py) with [watchdog](https://pypi.org/project/watchdog/) for insane productivity.
+
+### Manage Contacts, Projects, and More.
+![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
 
 ## Navigation
 - [Frontend](frontend/gui.py)
