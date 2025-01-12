@@ -53,7 +53,7 @@ Some other features include:
 - [Sun Valley Theme](https://github.com/rdbende/Sun-Valley-ttk-theme/tree/main)
 - [Sqlite](https://www.sqlite.org/)
 
-#### But why?
+> #### But why?
 > "In the same way a woodworker invests the time in a jig, a programmer can build a code generator. 
 > Once built, it can be used throughout the life of the project at virtually no cost."
 > -- [*Andrew Hunt*](https://en.wikipedia.org/wiki/Andy_Hunt_(author))
