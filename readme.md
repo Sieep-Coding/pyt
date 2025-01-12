@@ -2,7 +2,7 @@
 
 <img src="https://github.com/Sieep-Coding/pyt/blob/main/assets/p.png" align="right" width="180" alt="Spark Logo" style="float: right;margin-right: 7px;margin-top: 7px;">
 
-`spark` is a **GUI** to manage essential **business data.** It is a **lightweight, fast, local-only** application designed for my personal use-case but applicable to small businesses or individuals who need an efficient tool for **organizing contacts, tracking leads, running simple exports to excel, running reports, and managing tasks/projects** without relying on [costly](https://instances.vantage.sh/) cloud services or heavy enterprise solutions. Built with a **reliable but fast** stack: `python`, `tkinter`, and `SQLite`. To improve the development experience, I have developed a boring `makefile` to manage build scripts and some spicy [hot reloading](hot_reload.py) with [watchdog.](https://pypi.org/project/watchdog/)
+`spark` is a **GUI** to manage essential **business data.** It is a **lightweight, fast, local-only** application designed for my personal use-case but applicable to small businesses or individuals who need an efficient tool for **organizing contacts, tracking leads, running simple exports to excel, running reports, and managing tasks/projects** without relying on [costly](https://instances.vantage.sh/) cloud services or heavy enterprise solutions. Built with a **reliable but fast** stack: `python`, `tkinter`, and `SQLite`. To improve the development experience, I have developed a boring `makefile` to manage build scripts and some spicy [hot reloading](hot_reload.py) with [watchdog.](https://pypi.org/project/watchdog/) Tested on Linux Ubuntu and Linux Mint
 
 <!-- [![wakatime](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720.svg)](https://wakatime.com/badge/user/2156ce13-ae9d-4c0e-a543-89b2bddcd2f6/project/5ede5fcd-c567-4543-9b11-5abcf126f720) -->
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -11,6 +11,7 @@
 ![Version: 4.3](https://img.shields.io/badge/Makefile-4.3-blue.svg)
 ![WSL Passing](https://img.shields.io/badge/WSL-Passing-darkgreen.svg)
 ![Ubuntu Passing](https://img.shields.io/badge/Ubuntu-Passing-darkgreen.svg)
+![Mint Passing](https://img.shields.io/badge/Mint-Passing-darkgreen.svg)
 
 
 <!-- ![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
