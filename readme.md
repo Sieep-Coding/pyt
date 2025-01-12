@@ -54,6 +54,6 @@ Some other features include:
 - [Sqlite](https://www.sqlite.org/)
 
 > #### But why?
-> "In the same way a woodworker invests the time in a jig, a programmer can build a code generator. 
-> Once built, it can be used throughout the life of the project at virtually no cost."
+> "In the same way a **woodworker** invests the time in a jig, a **programmer** can build a code generator. 
+> Once built, it can be used throughout the life of the project **at virtually no cost.**"
 > -- [*Andrew Hunt*](https://en.wikipedia.org/wiki/Andy_Hunt_(author))
