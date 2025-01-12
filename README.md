@@ -44,6 +44,20 @@ Some other features include:
 - [Dev tools](makefile)
 - [License](LICENSE)
 
+## Quickstart
+
+Clone:
+```
+git clone https://github.com/Sieep-Coding/spark.git
+```
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `make install`            | Installs dependencies                            |
+| `make`                    | Run Local                                        |
+| `make dev`                | Run Dev Environment                              |
+| `make backup`             | Backup database/flat data files.                 |
+
 ## Dependencies ✍️
 
 > [!IMPORTANT]  

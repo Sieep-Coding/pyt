@@ -4,6 +4,15 @@ I manage the environment through a [makefile,](https://www.gnu.org/software/make
 
 View the code [here.](makefile)
 
+## Quickstart
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `make install`            | Installs dependencies                            |
+| `make`                    | Run Local                                        |
+| `make dev`                | Run Dev Environment                              |
+| `make backup`             | Backup database/flat data files.                 |
+
 > [!CAUTION]  
 > Using dev tools incorrectly can cause destruction of your sensitive data. *Use at your own risk.*
 
@@ -18,7 +27,7 @@ make
 make dev
 ```
 ### Run Unit Tests:
-```bash
+```
 make test
 ```
 ### Run *Production Build*:
