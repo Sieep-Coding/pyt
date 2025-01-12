@@ -1,4 +1,4 @@
-# `spark` - *S*ystem for *P*rogressive and *A*ctive *R*elationship *K*eeping
+# `spark` - *S*ystem for *P*rogressive and *A*ctive *R*elationship *K*eeping ✨
 
 <img src="https://github.com/Sieep-Coding/pyt/blob/main/assets/p.png" align="right" width="180" alt="Spark Logo" style="float: right;margin-right: 7px;margin-top: 7px;">
 
