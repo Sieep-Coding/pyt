@@ -15,6 +15,9 @@ from backend.database import (
     delete_lead,
 )
 import sv_ttk
+from collections import Counter
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt
 
 
 def create_gui():
@@ -491,6 +494,73 @@ def create_gui():
         pady=1,
         font=font
     ).pack(side="left", padx=5)
+
+    # Reports
+    reports = frames["Reports"]
+
+    dashboard_frame = tk.Frame(reports)
+    dashboard_frame.pack(fill="both", expand=True)
+
+    tk.Label(
+        dashboard_frame,
+        text="Reports Dashboard",
+        font=("Arial", 16, "bold"),
+    ).pack()
+
+    def save_chart():
+        """Save the current chart to a file."""
+        filename = filedialog.asksaveasfilename(
+            initialfile="Untitled.png",
+            defaultextension=".png",
+            filetypes=[
+                ("Portable Graphics Format", "*.png"),
+                ("All Files", "*.*"),
+            ],
+        )
+        if filename:
+            try:
+                plt.savefig(filename)
+                tk.messagebox.showinfo("Success", f"Chart saved as {filename}")
+            except Exception as e:
+                tk.messagebox.showerror("Error", f"Failed to save chart: {e}")
+
+    def generate_leads_status_pie_chart():
+        """Generate a pie chart breaking down the status column of the leads table."""
+
+        all_leads = fetch_leads()
+
+        if all_leads == None:
+            tk.messagebox.showinfo("Error", "There are no leads!")
+
+        titles = [lead[3] for lead in all_leads if lead[3]]
+
+        status_counts = Counter(titles)
+
+        labels = status_counts.keys()
+        sizes = status_counts.values()
+
+        fig, ax = plt.subplots(figsize=(9, 5))
+        ax.pie(
+            sizes,
+            labels=labels,
+            autopct='%1.1f%%',
+            startangle=90,
+            colors=plt.cm.Paired.colors,
+        )
+        ax.set_title("Leads Titles Breakdown", fontsize=14)
+
+        chart_widget = FigureCanvasTkAgg(fig, master=dashboard_frame)
+        chart_widget.draw()
+        chart_widget.get_tk_widget().pack()
+
+        tk.Button(
+            dashboard_frame,
+            text="Save Chart",
+            command=save_chart,
+            fg="white",
+        ).pack(pady=10)
+
+    generate_leads_status_pie_chart()
 
     # Theme
     sv_ttk.set_theme("dark")

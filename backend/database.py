@@ -8,28 +8,48 @@ def init_database():
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS contacts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        business_id INTEGER NOT NULL,
         business_name TEXT,
         contact_name TEXT,
         email TEXT,
         phone TEXT,
-        status TEXT
+        status TEXT,
+        FOREIGN KEY (business_id) REFERENCES accounts (id)
     )
     """)
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS projects (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        business_id INTEGER NOT NULL,
         contact_id INTEGER,
         business_name TEXT,
         contact_name TEXT,
         email TEXT,
         phone TEXT,
         status TEXT,
-        FOREIGN KEY (contact_id) REFERENCES contacts (id)
+        FOREIGN KEY (contact_id) REFERENCES contacts (id),
+        FOREIGN KEY (business_id) REFERENCES accounts (id)
     )
     """)
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS leads (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        business_id INTEGER NOT NULL,
+        contact_id INTEGER,
+        business_name TEXT,
+        contact_name TEXT,
+        title TEXT,
+        email TEXT,
+        phone TEXT,
+        status TEXT,
+        FOREIGN KEY (contact_id) REFERENCES contacts (id),
+        FOREIGN KEY (business_id) REFERENCES accounts (id)
+    )
+    """)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS accounts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        business_id INTEGER NOT NULL,
         contact_id INTEGER,
         business_name TEXT,
         contact_name TEXT,
@@ -38,6 +58,7 @@ def init_database():
         phone TEXT,
         status TEXT,
         FOREIGN KEY (contact_id) REFERENCES contacts (id)
+        FOREIGN KEY (business_id) REFERENCES leads (id)
     )
     """)
 
