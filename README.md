@@ -33,7 +33,10 @@ Some other features include:
 - **Simple, *Fast AF***, `SQLite` backend. 🏃‍➡️
 - [Hot reloading](hot_reload.py) with [watchdog](https://pypi.org/project/watchdog/) for insane productivity. ⏰
 
-### Manage Contacts, Projects, and More.
+### Manage Your Contacts and Leads
+![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image1.png)
+
+### Run Reports and View Insights
 ![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
 
 ## Navigation 🧭
