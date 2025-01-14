@@ -34,10 +34,10 @@ Some other features include:
 - [Hot reloading](hot_reload.py) with [watchdog](https://pypi.org/project/watchdog/) for insane productivity. ⏰
 
 ### Manage Your Contacts and Leads
-![](https://github.com/Sieep-Coding/spark/blob/main/assets/img.png)
+![](https://github.com/Sieep-Coding/spark/blob/main/assets/image.png)
 
 ### Run Reports and View Insights
-![](https://github.com/Sieep-Coding/spark/blob/main/assets/image.png)
+
 
 ## Navigation 🧭
 - [Frontend](frontend/gui.py)
