@@ -1,8 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-import sqlite3
 
-# Assuming the functions are in a module named `database`
 from backend.database import (
     init_database,
     fetch_contacts,
@@ -11,10 +9,6 @@ from backend.database import (
     delete_contact,
     fetch_leads,
     add_lead,
-    update_lead,
-    delete_lead,
-    fetch_projects,
-    add_project,
     delete_project,
 )
 
@@ -28,7 +22,6 @@ class TestDatabase(unittest.TestCase):
         init_database()
 
         mock_connect.assert_called_once_with("business_contacts.db")
-        # 3 CREATE TABLE + 3 SELECT COUNT
         self.assertEqual(mock_conn.cursor.return_value.execute.call_count, 6)
         mock_conn.commit.assert_called_once()
         mock_conn.close.assert_called_once()
