@@ -37,7 +37,7 @@ Some other features include:
 ![](https://github.com/Sieep-Coding/pyt/blob/main/assets/img.png)
 
 ### Run Reports and View Insights
-![](https://github.com/Sieep-Coding/pyt/blob/main/assets/image.png)
+![](https://github.com/Sieep-Coding/spark/blob/main/assets/image.png)
 
 ## Navigation 🧭
 - [Frontend](frontend/gui.py)
