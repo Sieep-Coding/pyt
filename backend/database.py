@@ -101,6 +101,45 @@ def update_contact(business_name, contact_name, email, phone, status):
     conn.close()
 
 
+def fetch_accounts():
+    conn = sqlite3.connect("business_contacts.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM accounts")
+    accounts = cursor.fetchall()
+    conn.close()
+    return accounts
+
+
+def add_account(business_name, contact_name, email, phone, status):
+    conn = sqlite3.connect("business_contacts.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO accounts (business_name, contact_name, email, phone, status) VALUES (?, ?, ?, ?, ?)",
+        (business_name, contact_name, email, phone, status)
+    )
+    conn.commit()
+    conn.close()
+
+
+def update_account(business_name, contact_name, email, phone, status):
+    conn = sqlite3.connect("business_contacts.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "UPDATE accounts (business_name, contact_name, email, phone, status) VALUES (?, ?, ?, ?, ?)",
+        (business_name, contact_name, email, phone, status)
+    )
+    conn.commit()
+    conn.close()
+
+
+def delete_account(acct_id):
+    conn = sqlite3.connect("business_contacts.db")
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM accounts WHERE id = ?", (acct_id,))
+    conn.commit()
+    conn.close()
+
+
 def fetch_leads():
     conn = sqlite3.connect("business_contacts.db")
     cursor = conn.cursor()

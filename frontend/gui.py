@@ -11,6 +11,9 @@ from backend.database import (
     fetch_leads,
     add_lead,
     delete_lead,
+    add_account,
+    fetch_accounts,
+    delete_account
 )
 import sv_ttk
 from collections import Counter
@@ -30,6 +33,12 @@ def create_gui():
         proj_table.delete(*proj_table.get_children())
         for project in fetch_projects():
             proj_table.insert("", "end", values=project)
+
+    def populate_account_table():
+        """Populate the projects table."""
+        acct_table.delete(*acct_table.get_children())
+        for account in fetch_accounts():
+            acct_table.insert("", "end", values=account)
 
     def populate_lead_table():
         """Populate the leads table."""
@@ -169,6 +178,65 @@ def create_gui():
             font=font
         ).grid(row=6, column=0, columnspan=2, pady=20)
 
+    def add_account_window():
+        def submit_new_account():
+            business_name = business_name_entry.get()
+            contact_name = contact_name_entry.get()
+            email = email_entry.get()
+            phone = phone_entry.get()
+            status = status_entry.get()
+
+            if not all([business_name, contact_name, email, phone, status]):
+                messagebox.showerror("Error", "All fields are required.")
+                return
+
+            add_account(business_name, contact_name, email, phone, status)
+            populate_account_table()
+            add_window.destroy()
+
+        add_window = tk.Toplevel(root)
+        add_window.title("spark - Add New Account")
+        add_window.configure()
+
+        tk.Label(add_window, text="Business Name:").grid(
+            row=0, column=0, padx=10, pady=5, sticky="nsew"
+        )
+        business_name_entry = tk.Entry(add_window, font=font)
+        business_name_entry.grid(row=0, column=1, padx=20, pady=10, sticky="e")
+
+        tk.Label(add_window, text="Contact Name:").grid(
+            row=1, column=0, padx=20, pady=10, sticky="e"
+        )
+        contact_name_entry = tk.Entry(add_window, font=font)
+        contact_name_entry.grid(row=1, column=1, padx=20, pady=10, sticky="e")
+
+        tk.Label(add_window, text="Email:").grid(
+            row=3, column=0, padx=20, pady=10, sticky="e"
+        )
+        email_entry = tk.Entry(add_window, font=font)
+        email_entry.grid(row=3, column=1, padx=20, pady=10, sticky="e")
+
+        tk.Label(add_window, text="Phone:").grid(
+            row=4, column=0, padx=20, pady=10, sticky="e"
+        )
+        phone_entry = tk.Entry(add_window, font=font)
+        phone_entry.grid(row=4, column=1, padx=20, pady=10, sticky="e")
+
+        tk.Label(add_window, text="Status:").grid(
+            row=5, column=0, padx=20, pady=10, sticky="e"
+        )
+        status_entry = tk.Entry(add_window, font=font)
+        status_entry.grid(row=5, column=1, padx=20, pady=10, sticky="e")
+
+        tk.Button(
+            add_window,
+            text="Add Account",
+            command=submit_new_account,
+            padx=10,
+            pady=5,
+            font=font
+        ).grid(row=6, column=0, columnspan=2, pady=20)
+
     def delete_selected_contact():
         selected_item = table.selection()
         if not selected_item:
@@ -182,6 +250,22 @@ def create_gui():
                 contact_id = table.item(selected_item, "values")[0]
                 delete_contact(contact_id)
                 populate_table()
+            elif response is None or False:
+                return
+
+    def delete_selected_account():
+        selected_item = acct_table.selection()
+        if not selected_item:
+            messagebox.showerror("Error", "No contact selected.")
+            return
+        else:
+            response = messagebox.askyesnocancel(
+                "Confirm Delete", "Are you sure you want to delete this contact?"
+            )
+            if response:
+                acct_id = acct_table.item(selected_item, "values")[0]
+                delete_account(acct_id)
+                populate_account_table()
             elif response is None or False:
                 return
 
@@ -284,6 +368,9 @@ def create_gui():
 
     def populate_and_export():
         populate_table()
+        populate_lead_table()
+        populate_account_table()
+        populate_project_table()
         export_to_csv()
 
     root = tk.Tk()
@@ -298,7 +385,7 @@ def create_gui():
 
     file = Menu(menubar, tearoff=False, font=font_menu, cursor="plus")
     menubar.add_cascade(label="File", menu=file)
-    file.add_command(label="New")
+    file.add_command(label="Save", command=populate_and_export)
     file.add_command(label="Exit", command=root.quit)
 
     edit = Menu(menubar, tearoff=False, font=font_menu, cursor="plus")
@@ -393,6 +480,58 @@ def create_gui():
         button_frame,
         text="Reload Table",
         command=populate_table,
+        padx=5,
+        pady=1,
+        font=font
+    ).pack(side="left", padx=5)
+
+    # Accounts
+    accounts = frames["Accounts"]
+
+    acct_table = ttk.Treeview(
+        accounts,
+        columns=("ID", "Business Name", "Contact Name",
+                 "Email", "Phone", "Status"),
+        show="headings",
+    )
+    acct_table.heading("ID", text="ID")
+    acct_table.heading("Business Name", text="Business Name")
+    acct_table.heading("Contact Name", text="Contact Name")
+    acct_table.heading("Email", text="Email")
+    acct_table.heading("Phone", text="Phone")
+    acct_table.heading("Status", text="Status")
+    acct_table.pack(fill="both", expand=True)
+
+    button_frame = tk.Frame(accounts)
+    button_frame.pack(pady=20)
+
+    tk.Button(
+        button_frame,
+        text="Add Account",
+        command=add_account_window,
+        padx=5,
+        pady=1,
+        font=font
+    ).pack(side="left", padx=5)
+    tk.Button(
+        button_frame,
+        text="Delete Account",
+        command=delete_selected_account,
+        padx=5,
+        pady=1,
+        font=font
+    ).pack(side="left", padx=5)
+    tk.Button(
+        button_frame, text="Export",
+        command=populate_and_export,
+        padx=5,
+        pady=1,
+        font=font
+    ).pack(side="left", padx=5)
+    tk.Button(
+        button_frame,
+        text="Reload Table",
+        command=populate_account_table,
         padx=5,
         pady=1,
         font=font
