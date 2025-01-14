@@ -18,22 +18,26 @@ def init_database():
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS projects (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        contact_id INTEGER,
         business_name TEXT,
         contact_name TEXT,
         email TEXT,
         phone TEXT,
-        status TEXT
+        status TEXT,
+        FOREIGN KEY (contact_id) REFERENCES contacts (id)
     )
     """)
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS leads (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        contact_id INTEGER,
         business_name TEXT,
         contact_name TEXT,
         title TEXT,
         email TEXT,
         phone TEXT,
-        status TEXT
+        status TEXT,
+        FOREIGN KEY (contact_id) REFERENCES contacts (id)
     )
     """)
 
