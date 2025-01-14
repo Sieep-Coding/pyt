@@ -1,23 +1,21 @@
 import csv
 import tkinter as tk
-from tkinter import ttk, messagebox, Menu, filedialog, Scrollbar
+from tkinter import ttk, messagebox, Menu, filedialog
 import tkinter.font
 from backend.database import (
     fetch_contacts,
     add_contact,
     delete_contact,
-    add_project,
     fetch_projects,
     delete_project,
     fetch_leads,
     add_lead,
-    update_lead,
     delete_lead,
 )
 import sv_ttk
 from collections import Counter
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg  # type: ignore
+import matplotlib.pyplot as plt  # type: ignore
 
 
 def create_gui():
@@ -399,7 +397,6 @@ def create_gui():
         pady=1,
         font=font
     ).pack(side="left", padx=5)
-
     # Projects
     projects = frames["Projects"]
 
