@@ -1,6 +1,6 @@
 import csv
 import tkinter as tk
-from tkinter import ttk, messagebox, Menu, filedialog
+from tkinter import ttk, messagebox, Menu, filedialog, Scrollbar
 import tkinter.font
 from backend.database import (
     fetch_contacts,
@@ -504,7 +504,10 @@ def create_gui():
     tk.Label(
         dashboard_frame,
         text="Reports Dashboard",
-        font=("Arial", 16, "bold"),
+    ).pack()
+    tk.Label(
+        dashboard_frame,
+        text="Restart app to update chart.",
     ).pack()
 
     def save_chart():
@@ -544,8 +547,9 @@ def create_gui():
             sizes,
             labels=labels,
             autopct='%1.1f%%',
-            startangle=90,
+            startangle=75,
             colors=plt.cm.Paired.colors,
+            counterclock=False
         )
         ax.set_title("Leads Titles Breakdown", fontsize=14)
 
