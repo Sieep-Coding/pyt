@@ -242,7 +242,12 @@ def create_gui():
     def delete_selected_contact():
         selected_item = table.selection()
         if not selected_item:
-            messagebox.showerror("Error", "No contact selected.")
+            messagebox.showerror(
+                "Error", "No contact selected.")
+            return
+        if len(selected_item) > 1:
+            messagebox.showerror(
+                "Error", "Please select one contact, this feature will be added soon.")
             return
         else:
             response = messagebox.askyesnocancel(
@@ -260,6 +265,10 @@ def create_gui():
         if not selected_item:
             messagebox.showerror("Error", "No account selected.")
             return
+        if len(selected_item) > 1:
+            messagebox.showerror(
+                "Error", "Please select one contact, this feature will be added soon.")
+            return
         else:
             response = messagebox.askyesnocancel(
                 "Confirm Delete", "Are you sure you want to delete this account?"
@@ -275,6 +284,10 @@ def create_gui():
         selected_lead = lead_table.selection()
         if not selected_lead:
             messagebox.showerror("Error", "No lead selected.")
+            return
+        if len(selected_lead) > 1:
+            messagebox.showerror(
+                "Error", "Please select one contact, this feature will be added soon.")
             return
         else:
             response = messagebox.askyesnocancel(
@@ -515,6 +528,7 @@ def create_gui():
         columns=("ID", "Business Name", "Contact Name",
                  "Email", "Phone", "Status"),
         show="headings",
+        selectmode='browse',
     )
     table.heading("ID", text="ID")
     table.heading("Business Name", text="Business Name")
