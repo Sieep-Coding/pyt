@@ -13,7 +13,8 @@ from backend.database import (
     delete_lead,
     add_account,
     fetch_accounts,
-    delete_account
+    delete_account,
+    update_contact
 )
 import sv_ttk
 from collections import Counter
@@ -22,7 +23,7 @@ import matplotlib.pyplot as plt  # type: ignore
 
 
 def create_gui():
-    def populate_table():
+    def populate_contact_table():
         """Populate the contacts table."""
         table.delete(*table.get_children())
         for contact in fetch_contacts():
@@ -67,7 +68,7 @@ def create_gui():
                 return
 
             add_contact(business_name, contact_name, email, phone, status)
-            populate_table()
+            populate_contact_table()
             add_window.destroy()
 
         add_window = tk.Toplevel(root)
@@ -249,7 +250,7 @@ def create_gui():
             if response:
                 contact_id = table.item(selected_item, "values")[0]
                 delete_contact(contact_id)
-                populate_table()
+                populate_contact_table()
             elif response is None or False:
                 return
 
@@ -301,14 +302,84 @@ def create_gui():
             elif response is None or False:
                 return
 
-    def update_selected_contact():
+    def update_selected_contact_window():
         selected_item = table.selection()
         if not selected_item:
             messagebox.showerror("Error", "No contact selected.")
             return
-        contact_id = table.item(selected_item, "values")[0]
-        update_selected_contact(contact_id)
-        populate_table()
+
+        def update_selected_contact():
+            # Get the selected contact's ID
+            selected_item = table.selection()
+            if not selected_item:
+                messagebox.showerror("Error", "No contact selected.")
+                return
+
+            contact_id = table.item(selected_item, "values")[0]
+
+            # Retrieve updated data from entry fields
+            business_name = business_name_entry.get()
+            contact_name = contact_name_entry.get()
+            email = email_entry.get()
+            phone = phone_entry.get()
+            status = status_entry.get()
+
+            # Ensure all fields are filled
+            if not all([business_name, contact_name, email, phone, status]):
+                messagebox.showerror("Error", "All fields are required.")
+                return
+
+            try:
+                # Pass all six parameters to update_contact
+                update_contact(contact_id, business_name,
+                               contact_name, email, phone, status)
+                messagebox.showinfo("Success", "Contact updated successfully!")
+                populate_contact_table()  # Refresh the table
+                add_window.destroy()  # Close the update window
+            except Exception as e:
+                messagebox.showerror(
+                    "Database Error", f"Failed to update contact: {e}")
+
+        # Create the update contact window
+        add_window = tk.Toplevel(root)
+        add_window.title("spark - Update Contact")
+        add_window.configure(padx=20, pady=20)
+
+        # UI elements
+        tk.Label(add_window, text="Business Name:").grid(
+            row=0, column=0, padx=10, pady=5, sticky="e")
+        business_name_entry = tk.Entry(add_window, font=font)
+        business_name_entry.grid(row=0, column=1, padx=10, pady=5)
+
+        tk.Label(add_window, text="Contact Name:").grid(
+            row=1, column=0, padx=10, pady=5, sticky="e")
+        contact_name_entry = tk.Entry(add_window, font=font)
+        contact_name_entry.grid(row=1, column=1, padx=10, pady=5)
+
+        tk.Label(add_window, text="Email:").grid(
+            row=2, column=0, padx=10, pady=5, sticky="e")
+        email_entry = tk.Entry(add_window, font=font)
+        email_entry.grid(row=2, column=1, padx=10, pady=5)
+
+        tk.Label(add_window, text="Phone:").grid(
+            row=3, column=0, padx=10, pady=5, sticky="e")
+        phone_entry = tk.Entry(add_window, font=font)
+        phone_entry.grid(row=3, column=1, padx=10, pady=5)
+
+        tk.Label(add_window, text="Status:").grid(
+            row=4, column=0, padx=10, pady=5, sticky="e")
+        status_entry = tk.Entry(add_window, font=font)
+        status_entry.grid(row=4, column=1, padx=10, pady=5)
+
+        # Add button to submit the update
+        tk.Button(
+            add_window,
+            text="Update Contact",
+            command=update_selected_contact,
+            padx=10,
+            pady=5,
+            font=font
+        ).grid(row=5, column=0, columnspan=2, pady=20)
 
     def export_to_csv():
         file_path = filedialog.asksaveasfilename(
@@ -367,7 +438,7 @@ def create_gui():
                     "Error", f"Failed to export data: {str(e)}")
 
     def populate_and_export():
-        populate_table()
+        populate_contact_table()
         populate_lead_table()
         populate_account_table()
         populate_project_table()
@@ -463,6 +534,14 @@ def create_gui():
     ).pack(side="left", padx=5)
     tk.Button(
         button_frame,
+        text="Update Contact",
+        command=update_selected_contact_window,
+        padx=5,
+        pady=1,
+        font=font
+    ).pack(side="left", padx=5)
+    tk.Button(
+        button_frame,
         text="Delete Contact",
         command=delete_selected_contact,
         padx=5,
@@ -479,7 +558,7 @@ def create_gui():
     tk.Button(
         button_frame,
         text="Reload Table",
-        command=populate_table,
+        command=populate_contact_table,
         padx=5,
         pady=1,
         font=font
@@ -625,7 +704,7 @@ def create_gui():
     tk.Button(
         button_frame,
         text="Reload Table",
-        command=populate_table,
+        command=populate_contact_table,
         padx=5,
         pady=1,
         font=font
@@ -744,7 +823,7 @@ def create_gui():
     # Theme
     sv_ttk.set_theme("dark")
     sv_ttk.use_dark_theme()
-    populate_table()
+    populate_contact_table()
     populate_project_table()
     populate_lead_table()
 

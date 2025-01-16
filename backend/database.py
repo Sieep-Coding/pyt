@@ -82,23 +82,37 @@ def fetch_contacts():
 def add_contact(business_name, contact_name, email, phone, status):
     conn = sqlite3.connect("business_contacts.db")
     cursor = conn.cursor()
-    cursor.execute(
-        "INSERT INTO contacts (business_name, contact_name, email, phone, status) VALUES (?, ?, ?, ?, ?)",
-        (business_name, contact_name, email, phone, status)
-    )
-    conn.commit()
-    conn.close()
+    try:
+        cursor.execute(
+            "INSERT INTO contacts (business_name, contact_name, email, phone, status) VALUES (?, ?, ?, ?, ?)",
+            (business_name, contact_name, email, phone, status)
+        )
+        conn.commit()
+    except sqlite3.OperationalError as e:
+        print(f"SQLite OperationalError: {e}")
+        raise
+    finally:
+        conn.close()
 
 
-def update_contact(business_name, contact_name, email, phone, status):
-    conn = sqlite3.connect("business_contacts.db")
-    cursor = conn.cursor()
-    cursor.execute(
-        "UPDATE contacts (business_name, contact_name, email, phone, status) VALUES (?, ?, ?, ?, ?)",
-        (business_name, contact_name, email, phone, status)
-    )
-    conn.commit()
-    conn.close()
+def update_contact(contact_id, business_name, contact_name, email, phone, status):
+    connection = sqlite3.connect("business_contacts.db")
+    cursor = connection.cursor()
+    try:
+        cursor.execute(
+            """
+            UPDATE contacts
+            SET business_name = ?, contact_name = ?, email = ?, phone = ?, status = ?
+            WHERE id = ?
+            """,
+            (business_name, contact_name, email, phone, status, contact_id)
+        )
+        connection.commit()
+    except sqlite3.OperationalError as e:
+        print(f"SQLite OperationalError: {e}")
+        raise
+    finally:
+        connection.close()
 
 
 def fetch_accounts():
