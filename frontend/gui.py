@@ -671,6 +671,45 @@ def create_gui():
         if all_leads == None:
             tk.messagebox.showinfo("Error", "There are no leads!")
 
+        titles = [lead[6] for lead in all_leads if lead[6]]
+
+        status_counts = Counter(titles)
+
+        labels = status_counts.keys()
+        sizes = status_counts.values()
+
+        fig, ax = plt.subplots(figsize=(6, 4))
+        ax.pie(
+            sizes,
+            labels=labels,
+            autopct='%1.1f%%',
+            startangle=75,
+            colors=plt.cm.Paired.colors,
+            counterclock=False
+        )
+        ax.set_title("Leads Status Breakdown", fontsize=14)
+
+        chart_widget = FigureCanvasTkAgg(fig, master=dashboard_frame)
+        chart_widget.draw()
+        chart_widget.get_tk_widget().pack()
+
+        tk.Button(
+            dashboard_frame,
+            text="Save Chart",
+            command=save_chart,
+            fg="white",
+        ).pack(pady=10)
+
+    generate_leads_status_pie_chart()
+
+    def generate_leads_titles_pie_chart():
+        """Generate a pie chart breaking down the status column of the leads table."""
+
+        all_leads = fetch_leads()
+
+        if all_leads == None:
+            tk.messagebox.showinfo("Error", "There are no leads!")
+
         titles = [lead[3] for lead in all_leads if lead[3]]
 
         status_counts = Counter(titles)
@@ -678,7 +717,7 @@ def create_gui():
         labels = status_counts.keys()
         sizes = status_counts.values()
 
-        fig, ax = plt.subplots(figsize=(9, 5))
+        fig, ax = plt.subplots(figsize=(6, 4))
         ax.pie(
             sizes,
             labels=labels,
@@ -700,7 +739,7 @@ def create_gui():
             fg="white",
         ).pack(pady=10)
 
-    generate_leads_status_pie_chart()
+    generate_leads_titles_pie_chart()
 
     # Theme
     sv_ttk.set_theme("dark")
