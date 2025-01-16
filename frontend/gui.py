@@ -643,7 +643,7 @@ def create_gui():
     ).pack()
     tk.Label(
         dashboard_frame,
-        text="Restart app to update chart.",
+        text="Restart app to update charts.",
     ).pack()
 
     def save_chart():
