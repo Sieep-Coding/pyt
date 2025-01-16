@@ -192,6 +192,7 @@ def create_gui():
                 return
 
             add_account(business_name, contact_name, email, phone, status)
+            messagebox.showinfo("Success", "Account added successfully!")
             populate_account_table()
             add_window.destroy()
 
@@ -257,11 +258,11 @@ def create_gui():
     def delete_selected_account():
         selected_item = acct_table.selection()
         if not selected_item:
-            messagebox.showerror("Error", "No contact selected.")
+            messagebox.showerror("Error", "No account selected.")
             return
         else:
             response = messagebox.askyesnocancel(
-                "Confirm Delete", "Are you sure you want to delete this contact?"
+                "Confirm Delete", "Are you sure you want to delete this account?"
             )
             if response:
                 acct_id = acct_table.item(selected_item, "values")[0]
@@ -273,7 +274,7 @@ def create_gui():
     def delete_selected_lead():
         selected_lead = lead_table.selection()
         if not selected_lead:
-            messagebox.showerror("Error", "No Lead selected.")
+            messagebox.showerror("Error", "No lead selected.")
             return
         else:
             response = messagebox.askyesnocancel(
@@ -282,6 +283,7 @@ def create_gui():
             if response:
                 lead_id = lead_table.item(selected_lead, "values")[0]
                 delete_lead(lead_id)
+                messagebox.showinfo("Success", "Lead deleted successfully!")
                 populate_lead_table()
             elif response is None or False:
                 return
@@ -289,7 +291,7 @@ def create_gui():
     def delete_selected_project():
         selected_item = proj_table.selection()
         if not selected_item:
-            messagebox.showerror("Error", "No contact selected.")
+            messagebox.showerror("Error", "No project selected.")
             return
         else:
             response = messagebox.askyesnocancel(
@@ -298,6 +300,7 @@ def create_gui():
             if response:
                 contact_id = proj_table.item(selected_item, "values")[0]
                 delete_project(contact_id)
+                messagebox.showinfo("Success", "Project Deleted successfully!")
                 populate_project_table()
             elif response is None or False:
                 return
